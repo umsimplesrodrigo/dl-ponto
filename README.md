@@ -1,3 +1,5 @@
+<img src="imagens_readme/logo_devlayers.png" width="400">
+
 # DevLayers - Projeto DL Ponto
 ## Histórico de Revisão
 | Data   | Versão | Descrição | Autor |
@@ -94,8 +96,8 @@ O sistema de ponto tem como objetivo gerenciar o controle de jornada de trabalho
  - O sistema deve permitir a exportação de relatórios em formatos como PDF ou Excel.
 
 ## Equipe
- - [Rodrigo Oliveira](https://github.com/umsimplesrodrigo)
- - [Laís Santana](https://github.com/Lys-31)
- - [Vinícius Almeida](https://github.com/vinisantosx)
- - [João Felipe](https://github.com/TxeiraFp)
- - [Matheus Alcântara](https://github.com/ELPATON)
+ - <img src="imagens_readme/lider.png" width="20">[ Rodrigo Oliveira](https://github.com/umsimplesrodrigo)
+ - <img src="imagens_readme/quadrado.png" width="20">[ Laís Santana](https://github.com/Lys-31)
+ - <img src="imagens_readme/triangulo.png" width="20">[ Vinícius Almeida](https://github.com/vinisantosx)
+ - <img src="imagens_readme/circulo.png" width="20">[ João Felipe](https://github.com/TxeiraFp)
+ - <img src="imagens_readme/circulo.png" width="20">[ Matheus Alcântara](https://github.com/ELPATON)
