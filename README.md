@@ -1,12 +1,6 @@
 <img src="imagens_readme/logo_devlayers.png" width="400">
 
 # DevLayers - Projeto DL Ponto
-## Histórico de Revisão
-| Data   | Versão | Descrição | Autor |
-|--------|--------|-----------|-------|
-| 15/02/2025 | 1.0 | Elaboração da primeira versão do documento | Rodrigo Oliveira |
-| 16/02/2025 | 1.1 | Inclusão de novas entidades e atributos e detalhamento nas funcionalidades | Rodrigo Oliveira |
-| 24/02/2025 | 1.2 | Formatando o arquivo corretamente e ajustando as entidades | Rodrigo Oliveira |
 ## Business Model Canvas
 |Principais Parceiros|Principais Atividades|Proposta de Valor|Relacionamento|Canais|Segmentos de clientes|Estrutura de custos|Fontes de renda|
 |--------------------|---------------------|-----------------|--------------|------|---------------------|-------------------|---------------|
@@ -14,7 +8,12 @@
 Desenvolvedores|Suporte técnico para empresas/clientes|Interface intuitiva e fácil de usar|Atualizações e melhorias contínuas| |Empresas com funcionários remotos ou em diferentes turnos|Infraestrutura (hospedagem, servidores, banco de dados)|Consultoria para empresas que precisem de treinamentos|
 | |Implementação de novas funcionalidades conforme necessidades do mercado|Relatórios automatizados para análise e conformidade|Comunidade ou fórum para feedback e sugestões| | |Suporte e atendimento ao cliente| |
 | |Treinamento para empresas/clientes|Possibilidade de expansão para novos recursos no futuro| | | |Marketing e divulgação| |
-
+## Histórico de Revisão
+| Data   | Versão | Descrição | Autor |
+|--------|--------|-----------|-------|
+| 15/02/2025 | 1.0 | Elaboração da primeira versão do documento | Rodrigo Oliveira |
+| 16/02/2025 | 1.1 | Inclusão de novas entidades e atributos e detalhamento nas funcionalidades | Rodrigo Oliveira |
+| 24/02/2025 | 1.2 | Formatando o arquivo corretamente e ajustando as entidades | Rodrigo Oliveira |
 ## Versão 1.2
 ### Objetivo
 Este documento apresenta os requisitos funcionais do sistema de controle de jornada a ser desenvolvido, seguindo boas práticas de arquitetura e design de software. O desenvolvimento será acompanhado pelo professor da disciplina, Jefté Goes, garantindo a aderência às diretrizes estabelecidas.
