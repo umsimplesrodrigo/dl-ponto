@@ -15,8 +15,9 @@ public class Batidas {
     @Column
     private LocalDate data;
 
-    @Column
-    private Long id_funcionario;
+    @ManyToOne
+    @JoinColumn(name = "id_funcionario", nullable = false)
+    private Funcionarios funcionario;
 
     @Column
     private String entrada1;
@@ -103,12 +104,12 @@ public class Batidas {
         this.data = data;
     }
 
-    public Long getId_funcionario() {
-        return id_funcionario;
+    public Funcionarios getId_funcionario() {
+        return funcionario;
     }
 
-    public void setId_funcionario(Long id_funcionario) {
-        this.id_funcionario = id_funcionario;
+    public void setId_funcionario(Funcionarios id_funcionario) {
+        this.funcionario = id_funcionario;
     }
 
     public String getEntrada1() {

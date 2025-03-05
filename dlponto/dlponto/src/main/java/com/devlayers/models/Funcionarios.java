@@ -20,17 +20,21 @@ public class Funcionarios {
     @Column
     private String n_identificador;
 
-    @Column
-    private Long empresa_id;
+    @ManyToOne
+    @JoinColumn(name = "empresa_id", nullable = false)
+    private Empresas empresa;
 
-    @Column
-    private Long horario_num;
+    /*@ManyToOne
+    @JoinColumn(name = "horario_num", nullable = false)
+    private Horarios horario;*/
 
-    @Column
-    private Long funcao_id;
+    /*@ManyToOne
+    @JoinColumn(name = "funcao_id", nullable = false)
+    private Funcoes funcao;*/
 
-    @Column
-    private Long departamento_id;
+    /*@ManyToOne
+    @JoinColumn(name = "departamento_id", nullable = false)
+    private Departamentos departamento;*/
 
     @Column
     private LocalDate admissao;
@@ -85,37 +89,37 @@ public class Funcionarios {
         this.n_identificador = n_identificador;
     }
 
-    public Long getEmpresa_id() {
-        return empresa_id;
+    public Empresas getEmpresa_id() {
+        return empresa;
     }
 
-    public void setEmpresa_id(Long empresa_id) {
-        this.empresa_id = empresa_id;
+    public void setEmpresa_id(Empresas empresa_id) {
+        this.empresa = empresa_id;
     }
 
-    public Long getHorario_num() {
+    /*public Long getHorario_num() {
         return horario_num;
-    }
+    }*/
 
-    public void setHorario_num(Long horario_num) {
+    /*public void setHorario_num(Long horario_num) {
         this.horario_num = horario_num;
-    }
+    }*/
 
-    public Long getFuncao_id() {
+    /*public Long getFuncao_id() {
         return funcao_id;
     }
 
     public void setFuncao_id(Long funcao_id) {
         this.funcao_id = funcao_id;
-    }
+    }*/
 
-    public Long getDepartamento_id() {
+    /*public Long getDepartamento_id() {
         return departamento_id;
     }
 
     public void setDepartamento_id(Long departamento_id) {
         this.departamento_id = departamento_id;
-    }
+    }*/
 
     public LocalDate getAdmissao() {
         return admissao;
