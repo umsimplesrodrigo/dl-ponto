@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class Usuarios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false, length = 255)
     private String nome;
@@ -31,35 +31,67 @@ public class Usuarios {
     @Column
     private LocalDateTime ultimo_login;
 
-    public Integer getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public void setId(Integer id) { this.id = id; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getNome() { return nome; }
+    public String getNome() {
+        return nome;
+    }
 
-    public void setNome(String nome) { this.nome = nome; }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public boolean isAdministrador() { return administrador; }
+    public boolean isAdministrador() {
+        return administrador;
+    }
 
-    public void setAdministrador(boolean administrador) { this.administrador = administrador; }
+    public void setAdministrador(boolean administrador) {
+        this.administrador = administrador;
+    }
 
-    public String getSenha() { return senha; }
+    public String getSenha() {
+        return senha;
+    }
 
-    public void setSenha(String senha) { this.senha = senha; }
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
-    public boolean isBloqueado() { return bloqueado; }
+    public boolean isBloqueado() {
+        return bloqueado;
+    }
 
-    public void setBloqueado(boolean bloqueado) { this.bloqueado = bloqueado; }
+    public void setBloqueado(boolean bloqueado) {
+        this.bloqueado = bloqueado;
+    }
 
-    public boolean isDesativado() { return desativado; }
+    public boolean isDesativado() {
+        return desativado;
+    }
 
-    public void setDesativado(boolean desativado) { this.desativado = desativado; }
+    public void setDesativado(boolean desativado) {
+        this.desativado = desativado;
+    }
 
-    public String getEmail() { return email; }
+    public String getEmail() {
+        return email;
+    }
 
-    public void setEmail(String email) { this.email = email; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public LocalDateTime getUltimo_login() { return ultimo_login; }
+    public LocalDateTime getUltimo_login() {
+        return ultimo_login;
+    }
 
-    public void setUltimo_login(LocalDateTime ultimo_login) { this.ultimo_login = ultimo_login; }
+    public void setUltimo_login(LocalDateTime ultimo_login) {
+        this.ultimo_login = ultimo_login;
+    }
 }
