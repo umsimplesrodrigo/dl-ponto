@@ -24,13 +24,13 @@ public class Funcionarios {
     @JoinColumn(name = "empresa_id", nullable = false)
     private Empresas empresa;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "horario_num", nullable = false)
-    private Horarios horario;*/
+    private Horarios horario;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "funcao_id", nullable = false)
-    private Funcoes funcao;*/
+    private Funcoes funcao;
 
     /*@ManyToOne
     @JoinColumn(name = "departamento_id", nullable = false)
@@ -97,21 +97,21 @@ public class Funcionarios {
         this.empresa = empresa_id;
     }
 
-    /*public Long getHorario_num() {
-        return horario_num;
-    }*/
-
-    /*public void setHorario_num(Long horario_num) {
-        this.horario_num = horario_num;
-    }*/
-
-    /*public Long getFuncao_id() {
-        return funcao_id;
+    public Horarios getHorario_num() {
+        return horario;
     }
 
-    public void setFuncao_id(Long funcao_id) {
-        this.funcao_id = funcao_id;
-    }*/
+    public void setHorario_num(Horarios horario_num) {
+        this.horario = horario_num;
+    }
+
+    public Funcoes getFuncao_id() {
+        return funcao;
+    }
+
+    public void setFuncao_id(Funcoes funcao_id) {
+        this.funcao = funcao_id;
+    }
 
     /*public Long getDepartamento_id() {
         return departamento_id;
