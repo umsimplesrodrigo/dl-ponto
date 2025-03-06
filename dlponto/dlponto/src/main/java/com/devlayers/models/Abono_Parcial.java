@@ -12,7 +12,7 @@ public class Abono_Parcial {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "abono_parcial", nullable = false)
+    @JoinColumn(name = "funcionario_id", nullable = false)
     private Funcionarios funcionario;
 
     @Column
