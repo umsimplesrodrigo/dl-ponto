@@ -22,7 +22,7 @@ public class Afastamentos {
     private LocalDate data_fim;
 
     @ManyToOne
-    @JoinColumn(name = "justificativas", nullable = false)
+    @JoinColumn(name = "justificativa_id", nullable = false)
     private Justificativas justificativa;
 
     @Column

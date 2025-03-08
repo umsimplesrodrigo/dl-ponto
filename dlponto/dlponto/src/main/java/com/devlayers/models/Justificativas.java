@@ -10,7 +10,7 @@ public class Justificativas {
     private Long id;
 
     @Column
-    private String noma;
+    private String nome;
 
     @Column
     private String descricao;
@@ -26,12 +26,12 @@ public class Justificativas {
         this.id = id;
     }
 
-    public String getNoma() {
-        return noma;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNoma(String noma) {
-        this.noma = noma;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
