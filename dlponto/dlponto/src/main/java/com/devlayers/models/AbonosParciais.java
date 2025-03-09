@@ -2,7 +2,7 @@ package com.devlayers.models;
 
 import java.time.LocalDate;
 
-public class AbonoParcial {
+public class AbonosParciais {
     private Long id;
     private Funcionarios funcionario;
     private LocalDate data;
