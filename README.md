@@ -94,8 +94,10 @@ O sistema de ponto tem como objetivo gerenciar o controle de jornada de trabalho
  - O sistema deve permitir a exportação de relatórios em formatos como PDF ou Excel.
 
 ## Equipe
- - [Rodrigo Oliveira](https://github.com/umsimplesrodrigo)
- - [Laís Santana](https://github.com/Lys-31)
- - [Vinícius Almeida](https://github.com/vinisantosx)
- - [João Felipe](https://github.com/TxeiraFp)
- - [Matheus Alcântara](https://github.com/ELPATON)
+<ul>
+<li><img src="imagens_readme/macaco-cirugiao-umsimples.png" width="30px"><a href="https://github.com/umsimplesrodrigo">Rodrigo Oliveira</a></li>
+<li><img src="imagens_readme/quadrado.png" width="30px"><a href="https://github.com/Lys-31">Laís Santana</a></li>
+<li><img src="imagens_readme/triangulo.png" width="30px"><a href="https://github.com/vinisantosx">Vinícius Almeida</a></li>
+<li><img src="imagens_readme/circulo.png" width="30px"><a href="https://github.com/TxeiraFp">João Felipe</a></li>
+<li><img src="imagens_readme/circulo.png" width="30px"><a href="https://github.com/ELPATON">Matheus Alcântara</a></li>
+</ul>
