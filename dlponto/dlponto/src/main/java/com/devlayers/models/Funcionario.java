@@ -2,7 +2,7 @@ package com.devlayers.models;
 
 import java.time.LocalDate;
 
-public class Funcionarios {
+public class Funcionario {
     private Long id;
     private String n_folha;
     private String nome;

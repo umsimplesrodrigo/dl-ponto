@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class AbonosParciais {
     private Long id;
-    private Funcionarios funcionario;
+    private Funcionario funcionario;
     private LocalDate data;
     private String hora_inicio;
     private String hora_fim;
@@ -19,11 +19,11 @@ public class AbonosParciais {
         this.id = id;
     }
 
-    public Funcionarios getFuncionario() {
+    public Funcionario getFuncionario() {
         return funcionario;
     }
 
-    public void setFuncionario(Funcionarios funcionario) {
+    public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
 
