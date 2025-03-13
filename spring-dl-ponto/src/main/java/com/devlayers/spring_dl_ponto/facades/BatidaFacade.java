@@ -2,6 +2,7 @@ package com.devlayers.spring_dl_ponto.facades;
 
 import com.devlayers.spring_dl_ponto.applications.BatidaApplication;
 import com.devlayers.spring_dl_ponto.entities.Batida;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -9,9 +10,10 @@ import java.util.List;
 
 @Component
 public class BatidaFacade {
-    private BatidaApplication batidaApplication;
+    private final BatidaApplication batidaApplication;
 
-    public void BatidaFacade(BatidaApplication batidaApplication) {
+    @Autowired
+    public BatidaFacade(BatidaApplication batidaApplication) {
         this.batidaApplication = batidaApplication;
     }
 

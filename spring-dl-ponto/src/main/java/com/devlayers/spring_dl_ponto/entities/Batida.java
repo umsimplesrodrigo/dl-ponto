@@ -1,7 +1,10 @@
 package com.devlayers.spring_dl_ponto.entities;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 
+@Component
 public class Batida {
     private Long id;
     private LocalDate data;

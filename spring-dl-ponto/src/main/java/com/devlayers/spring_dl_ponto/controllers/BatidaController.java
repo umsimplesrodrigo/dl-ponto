@@ -2,7 +2,6 @@ package com.devlayers.spring_dl_ponto.controllers;
 
 import com.devlayers.spring_dl_ponto.entities.Batida;
 import com.devlayers.spring_dl_ponto.facades.BatidaFacade;
-import com.devlayers.spring_dl_ponto.facades.BatidaFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +14,8 @@ public class BatidaController {
     private BatidaFacade batidaFacade;
 
     @Autowired
-    public BatidaController(BatidaFacade batidaFacede) {
-        this.batidaFacade = batidaFacede;
+    public BatidaController(BatidaFacade batidaFacade) {
+        this.batidaFacade = batidaFacade;
     }
 
     @GetMapping("")
@@ -35,12 +34,12 @@ public class BatidaController {
     }
 
     @PostMapping("")
-    public void incluirBatida(Batida batida) {
+    public void incluirBatida(@RequestBody Batida batida) {
         this.batidaFacade.incluirBatida(batida);
     }
 
     @PutMapping("/{id}")
-    public void atualizarBatida(@PathVariable Long id, Batida batida) {
+    public void atualizarBatida(@PathVariable Long id, @RequestBody Batida batida) {
         this.batidaFacade.atualizarBatida(id, batida);
     }
 

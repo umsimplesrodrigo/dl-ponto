@@ -52,6 +52,7 @@ public class BatidaRepository {
         batidaInMemory.setSaida5(batida.getSaida5());
         batidaInMemory.setAjuste(batida.getAjuste());
         batidaInMemory.setHorario_num(batida.getHorario_num());
+        batidaInMemory.setFolga(batida.isFolga());
         batidaInMemory.setBac_entrada1(batida.getBac_entrada1());
         batidaInMemory.setBac_saida1(batida.getBac_saida1());
         batidaInMemory.setBac_entrada2(batida.getBac_entrada2());

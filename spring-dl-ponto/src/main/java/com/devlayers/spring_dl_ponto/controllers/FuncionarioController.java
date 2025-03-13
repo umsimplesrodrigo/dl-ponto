@@ -28,12 +28,12 @@ public class FuncionarioController {
     }
 
     @PostMapping("")
-    public void atualizarFuncionario(Funcionario funcionario) {
+    public void atualizarFuncionario(@RequestBody Funcionario funcionario) {
         this.funcionarioFacade.cadastrarFuncionario(funcionario);
     }
 
     @PutMapping("/{id}")
-    public void atualizarFuncionario(@PathVariable Long id, Funcionario funcionario) {
+    public void atualizarFuncionario(@PathVariable Long id, @RequestBody Funcionario funcionario) {
         this.funcionarioFacade.atualizarFuncionario(id, funcionario);
     }
 
