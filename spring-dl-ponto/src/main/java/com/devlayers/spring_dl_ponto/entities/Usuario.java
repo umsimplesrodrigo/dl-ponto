@@ -2,7 +2,7 @@ package com.devlayers.spring_dl_ponto.entities;
 
 import java.time.LocalDateTime;
 
-public class Usuarios {
+public class Usuario {
     private Long id;
     private String nome;
     private boolean administrador;

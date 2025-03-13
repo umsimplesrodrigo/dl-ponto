@@ -1,6 +1,6 @@
 package com.devlayers.spring_dl_ponto.entities;
 
-public class Justificativas {
+public class Justificativa {
     private Long id;
     private String nome;
     private String descricao;

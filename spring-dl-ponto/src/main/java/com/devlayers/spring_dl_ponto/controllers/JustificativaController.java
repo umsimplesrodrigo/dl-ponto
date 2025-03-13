@@ -1,6 +1,6 @@
 package com.devlayers.spring_dl_ponto.controllers;
 
-import com.devlayers.spring_dl_ponto.entities.Justificativas;
+import com.devlayers.spring_dl_ponto.entities.Justificativa;
 import com.devlayers.spring_dl_ponto.facades.JustificativaFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,22 +18,22 @@ public class JustificativaController {
     }
 
     @GetMapping("")
-    public List<Justificativas> get() {
+    public List<Justificativa> get() {
         return justificativasFacade.search();
     }
 
     @GetMapping("/{id}")
-    public Justificativas getJustificativas(@PathVariable int id) {
+    public Justificativa getJustificativas(@PathVariable int id) {
         return justificativasFacade.searchById(id);
     }
 
     @PostMapping("")
-    public void register(@RequestBody Justificativas justificativa) {
+    public void register(@RequestBody Justificativa justificativa) {
         justificativasFacade.register(justificativa);
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable int id, @RequestBody Justificativas justificativa) {
+    public void update(@PathVariable int id, @RequestBody Justificativa justificativa) {
         justificativasFacade.update(id, justificativa);
     }
 

@@ -1,6 +1,6 @@
 package com.devlayers.spring_dl_ponto.repositories;
 
-import com.devlayers.spring_dl_ponto.entities.Empresas;
+import com.devlayers.spring_dl_ponto.entities.Empresa;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -8,19 +8,19 @@ import java.util.List;
 
 @Repository
 public class EmpresaReporitory {
-    private List<Empresas> empresas = new ArrayList<>();
+    private List<Empresa> empresas = new ArrayList<>();
 
-    public Empresas searchById(int id) {
-        Empresas empresa = empresas.stream().filter(p -> p.getId() == id).findFirst().get();
+    public Empresa searchById(int id) {
+        Empresa empresa = empresas.stream().filter(p -> p.getId() == id).findFirst().get();
 
         return empresa;
     }
 
-    public List<Empresas> searchEmpresas() {
+    public List<Empresa> searchEmpresas() {
         return empresas;
     }
 
-    public void addEmpresas(Empresas empresa) {
+    public void addEmpresas(Empresa empresa) {
         empresas.add(empresa);
     }
 
@@ -28,8 +28,8 @@ public class EmpresaReporitory {
         empresas.removeIf(p -> p.getId() == id);
     }
 
-    public void updateEmpresa(int id, Empresas empresa) {
-        Empresas empresaInMemory = this.searchById(id);
+    public void updateEmpresa(int id, Empresa empresa) {
+        Empresa empresaInMemory = this.searchById(id);
 
         empresaInMemory.setNome(empresa.getNome());
         empresaInMemory.setInscricao(empresa.getInscricao());

@@ -2,7 +2,7 @@ package com.devlayers.spring_dl_ponto.entities;
 
 import java.time.LocalDate;
 
-public class Feriados {
+public class Feriado {
     private Long id;
     private String descricao;
     private LocalDate data;

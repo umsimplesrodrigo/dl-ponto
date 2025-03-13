@@ -1,9 +1,9 @@
 package com.devlayers.spring_dl_ponto.entities;
 
-public class FeriadosEmpresas {
+public class FeriadoEmpresa {
     private Long id;
-    private Feriados feriado;
-    private Empresas empresa;
+    private Feriado feriado;
+    private Empresa empresa;
 
     public Long getId() {
         return id;
@@ -13,19 +13,19 @@ public class FeriadosEmpresas {
         this.id = id;
     }
 
-    public Feriados getFeriado() {
+    public Feriado getFeriado() {
         return feriado;
     }
 
-    public void setFeriado(Feriados feriado) {
+    public void setFeriado(Feriado feriado) {
         this.feriado = feriado;
     }
 
-    public Empresas getEmpresa() {
+    public Empresa getEmpresa() {
         return empresa;
     }
 
-    public void setEmpresa(Empresas empresa) {
+    public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
     }
 }

@@ -1,6 +1,6 @@
 package com.devlayers.spring_dl_ponto.applications;
 
-import com.devlayers.spring_dl_ponto.entities.Empresas;
+import com.devlayers.spring_dl_ponto.entities.Empresa;
 import com.devlayers.spring_dl_ponto.repositories.EmpresaReporitory;
 import org.springframework.stereotype.Component;
 
@@ -14,24 +14,24 @@ public class EmpresaApplication {
         this.empresasReporitory = empresasReporitory;
     }
 
-    public void register(Empresas empresa) {
+    public void register(Empresa empresa) {
         empresasReporitory.addEmpresas(empresa);
     }
 
-    public void update(int id, Empresas empresa) {
+    public void update(int id, Empresa empresa) {
         empresasReporitory.updateEmpresa(id, empresa);
     }
 
     public void remove(int id) {
-        Empresas empresa = empresasReporitory.searchById(id);
+        Empresa empresa = empresasReporitory.searchById(id);
         empresasReporitory.removeEmpresa(id);
     }
 
-    public List<Empresas> search() {
+    public List<Empresa> search() {
         return this.empresasReporitory.searchEmpresas();
     }
 
-    public Empresas searchById(int id) {
+    public Empresa searchById(int id) {
         return this.empresasReporitory.searchById(id);
     }
 

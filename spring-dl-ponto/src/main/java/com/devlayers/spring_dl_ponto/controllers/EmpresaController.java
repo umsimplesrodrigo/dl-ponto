@@ -1,6 +1,6 @@
 package com.devlayers.spring_dl_ponto.controllers;
 
-import com.devlayers.spring_dl_ponto.entities.Empresas;
+import com.devlayers.spring_dl_ponto.entities.Empresa;
 import com.devlayers.spring_dl_ponto.facades.EmpresaFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,22 +18,22 @@ public class EmpresaController {
     }
 
     @GetMapping("")
-    public List<Empresas> get() {
+    public List<Empresa> get() {
         return empresasFacade.search();
     }
 
     @GetMapping("/{id}")
-    public Empresas getEmpresas(@PathVariable int id) {
+    public Empresa getEmpresas(@PathVariable int id) {
         return empresasFacade.searchById(id);
     }
 
     @PostMapping("")
-    public void register(@RequestBody Empresas empresa) {
+    public void register(@RequestBody Empresa empresa) {
         empresasFacade.register(empresa);
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable int id, @RequestBody Empresas empresa) {
+    public void update(@PathVariable int id, @RequestBody Empresa empresa) {
         empresasFacade.update(id, empresa);
     }
 

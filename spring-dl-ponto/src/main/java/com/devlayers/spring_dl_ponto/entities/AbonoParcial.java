@@ -2,13 +2,13 @@ package com.devlayers.spring_dl_ponto.entities;
 
 import java.time.LocalDate;
 
-public class AbonosParciais {
+public class AbonoParcial {
     private Long id;
-    private Funcionarios funcionario;
+    private Funcionario funcionario;
     private LocalDate data;
     private String hora_inicio;
     private String hora_fim;
-    private Justificativas justificativa;
+    private Justificativa justificativa;
     private boolean tipo;
 
     public Long getId() {
@@ -19,11 +19,11 @@ public class AbonosParciais {
         this.id = id;
     }
 
-    public Funcionarios getFuncionario() {
+    public Funcionario getFuncionario() {
         return funcionario;
     }
 
-    public void setFuncionario(Funcionarios funcionario) {
+    public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
 
@@ -51,11 +51,11 @@ public class AbonosParciais {
         this.hora_fim = hora_fim;
     }
 
-    public Justificativas getJustificativa() {
+    public Justificativa getJustificativa() {
         return justificativa;
     }
 
-    public void setJustificativa(Justificativas justificativa) {
+    public void setJustificativa(Justificativa justificativa) {
         this.justificativa = justificativa;
     }
 

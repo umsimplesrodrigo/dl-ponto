@@ -1,7 +1,7 @@
 package com.devlayers.spring_dl_ponto.facades;
 
 import com.devlayers.spring_dl_ponto.applications.EmpresaApplication;
-import com.devlayers.spring_dl_ponto.entities.Empresas;
+import com.devlayers.spring_dl_ponto.entities.Empresa;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,11 +14,11 @@ public class EmpresaFacade {
         this.empresaApplication = empresaApplication;
     }
 
-    public void register(Empresas empresa) {
+    public void register(Empresa empresa) {
         this.empresaApplication.register(empresa);
     }
 
-    public void update(int id, Empresas empresa) {
+    public void update(int id, Empresa empresa) {
         this.empresaApplication.update(id, empresa);
     }
 
@@ -26,11 +26,11 @@ public class EmpresaFacade {
         this.empresaApplication.remove(id);
     }
 
-    public List<Empresas> search() {
+    public List<Empresa> search() {
         return this.empresaApplication.search();
     }
 
-    public Empresas searchById(int id) {
+    public Empresa searchById(int id) {
         return this.empresaApplication.searchById(id);
     }
 

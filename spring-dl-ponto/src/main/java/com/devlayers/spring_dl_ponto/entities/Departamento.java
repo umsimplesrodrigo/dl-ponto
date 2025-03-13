@@ -1,6 +1,6 @@
 package com.devlayers.spring_dl_ponto.entities;
 
-public class Funcoes {
+public class Departamento {
     private Long id;
     private String descricao;
 

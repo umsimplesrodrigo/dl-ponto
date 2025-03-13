@@ -1,6 +1,6 @@
 package com.devlayers.spring_dl_ponto.entities;
 
-public class Horarios {
+public class Horario {
     private Long id;
     private Long dia_semana;
     private String nome;

@@ -2,15 +2,15 @@ package com.devlayers.spring_dl_ponto.entities;
 
 import java.time.LocalDate;
 
-public class Funcionarios {
+public class Funcionario {
     private Long id;
     private String n_folha;
     private String nome;
     private String n_identificador;
-    private Empresas empresa;
-    private Horarios horario;
-    private Funcoes funcao;
-    private Departamentos departamento;
+    private Empresa empresa;
+    private Horario horario;
+    private Funcao funcao;
+    private Departamento departamento;
     private LocalDate admissao;
     private LocalDate demissao;
     private LocalDate afast_data_inicio;
@@ -51,35 +51,35 @@ public class Funcionarios {
         this.n_identificador = n_identificador;
     }
 
-    public Empresas getEmpresa() {
+    public Empresa getEmpresa() {
         return empresa;
     }
 
-    public void setEmpresa(Empresas empresa) {
+    public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
     }
 
-    public Horarios getHorario() {
+    public Horario getHorario() {
         return horario;
     }
 
-    public void setHorario(Horarios horario) {
+    public void setHorario(Horario horario) {
         this.horario = horario;
     }
 
-    public Funcoes getFuncao() {
+    public Funcao getFuncao() {
         return funcao;
     }
 
-    public void setFuncao(Funcoes funcao) {
+    public void setFuncao(Funcao funcao) {
         this.funcao = funcao;
     }
 
-    public Departamentos getDepartamento() {
+    public Departamento getDepartamento() {
         return departamento;
     }
 
-    public void setDepartamento(Departamentos departamento) {
+    public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
 

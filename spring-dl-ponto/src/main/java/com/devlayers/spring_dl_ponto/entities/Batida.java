@@ -2,10 +2,10 @@ package com.devlayers.spring_dl_ponto.entities;
 
 import java.time.LocalDate;
 
-public class Batidas {
+public class Batida {
     private Long id;
     private LocalDate data;
-    private Funcionarios funcionario;
+    private Funcionario funcionario;
     private String entrada1;
     private String saida1;
     private String entrada2;
@@ -46,11 +46,11 @@ public class Batidas {
         this.data = data;
     }
 
-    public Funcionarios getFuncionario() {
+    public Funcionario getFuncionario() {
         return funcionario;
     }
 
-    public void setFuncionario(Funcionarios funcionario) {
+    public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
 

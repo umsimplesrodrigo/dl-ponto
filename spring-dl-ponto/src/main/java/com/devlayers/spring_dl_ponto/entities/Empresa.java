@@ -1,6 +1,6 @@
 package com.devlayers.spring_dl_ponto.entities;
 
-public class Empresas {
+public class Empresa {
     private Long id;
     private String nome;
     private String inscricao;

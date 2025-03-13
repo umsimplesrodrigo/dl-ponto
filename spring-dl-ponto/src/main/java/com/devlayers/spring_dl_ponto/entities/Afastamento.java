@@ -2,12 +2,12 @@ package com.devlayers.spring_dl_ponto.entities;
 
 import java.time.LocalDate;
 
-public class Afastamentos {
+public class Afastamento {
     private Long id;
-    private Funcionarios funcionario;
+    private Funcionario funcionario;
     private LocalDate data_inicio;
     private LocalDate data_fim;
-    private Justificativas justificativa;
+    private Justificativa justificativa;
     private String obs;
 
     public Long getId() {
@@ -18,11 +18,11 @@ public class Afastamentos {
         this.id = id;
     }
 
-    public Funcionarios getFuncionario() {
+    public Funcionario getFuncionario() {
         return funcionario;
     }
 
-    public void setFuncionario(Funcionarios funcionario) {
+    public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
 
@@ -42,11 +42,11 @@ public class Afastamentos {
         this.data_fim = data_fim;
     }
 
-    public Justificativas getJustificativa() {
+    public Justificativa getJustificativa() {
         return justificativa;
     }
 
-    public void setJustificativa(Justificativas justificativa) {
+    public void setJustificativa(Justificativa justificativa) {
         this.justificativa = justificativa;
     }
 

@@ -1,6 +1,6 @@
 package com.devlayers.spring_dl_ponto.applications;
 
-import com.devlayers.spring_dl_ponto.entities.Justificativas;
+import com.devlayers.spring_dl_ponto.entities.Justificativa;
 import com.devlayers.spring_dl_ponto.repositories.JustificativaRepository;
 import org.springframework.stereotype.Component;
 
@@ -14,11 +14,11 @@ public class JustificativaApplication {
         this.justificativaRepository = justificativaRepository;
     }
 
-    public void register(Justificativas justificativa) {
+    public void register(Justificativa justificativa) {
         justificativaRepository.addJustificativas(justificativa);
     }
 
-    public void update(int id, Justificativas justificativa) {
+    public void update(int id, Justificativa justificativa) {
         justificativaRepository.updateJustificativas(id, justificativa);
     }
 
@@ -26,11 +26,11 @@ public class JustificativaApplication {
         justificativaRepository.removeJustificativas(id);
     }
 
-    public List<Justificativas> search() {
+    public List<Justificativa> search() {
         return justificativaRepository.searchJustificativas();
     }
 
-    public Justificativas searchById(int id) {
+    public Justificativa searchById(int id) {
         return justificativaRepository.searchById(id);
     }
 
