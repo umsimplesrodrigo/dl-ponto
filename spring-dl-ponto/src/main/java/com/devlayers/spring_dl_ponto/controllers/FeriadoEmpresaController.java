@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/feriadosEmpresas")
+@RequestMapping("/api/feriados-empresas")
 public class FeriadoEmpresaController {
 
     private final FeriadoEmpresaFacade feriadoEmpresaFacade;
