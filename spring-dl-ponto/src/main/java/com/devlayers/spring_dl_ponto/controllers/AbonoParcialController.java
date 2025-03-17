@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/abonosParciais")
+@RequestMapping("/api/abonos-parciais")
 public class AbonoParcialController {
 
     private final AbonoParcialFacade abonoParcialFacade;
