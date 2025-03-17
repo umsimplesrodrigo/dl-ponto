@@ -1,42 +1,44 @@
 package com.devlayers.spring_dl_ponto.controllers;
 
-import com.devlayers.spring_dl_ponto.entities.Justificativa;
-import com.devlayers.spring_dl_ponto.facades.JustificativaFacade;
+import com.devlayers.spring_dl_ponto.entities.Usuario;
+import com.devlayers.spring_dl_ponto.facades.UsuarioFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/usuario")
-public class UsuariosController {
-    private final UsuarioFacade usuarioFacade;
+@RequestMapping("/api/usuarios")
+public class UsuarioController {
+    private UsuarioFacade usuarioFacade;
 
     @Autowired
     public UsuarioController(UsuarioFacade usuarioFacade) {
         this.usuarioFacade = usuarioFacade;
     }
 
-    @GetMapping("")
-    public List<Usuario> get() {
-        return usuarioFacade.search();
+    @PostMapping("")
+    public void cadastrarUsuario(@RequestBody Usuario usuario) {
+        this.usuarioFacade.cadastrarUsuario(usuario);
     }
 
     @GetMapping("/{id}")
-    public Usuarios getUsuario(@PathVariable int id) {
-        return usuarioFacade.searchById(id);
+    public Usuario buscarUsuarioPorID(@PathVariable Long id) {
+        return this.usuarioFacade.buscarUsuariosPorID(id);
     }
 
-    @PostMapping("")
-    public void register(@RequestBody Usuario usuario) {
-        usuarioFacade.register(usuario);
+    @GetMapping("")
+    public List<Usuario> buscarUsuarios() {
+        return this.usuarioFacade.buscarUsuarios();
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable int id, @RequestBody Usuario usuario) { usuarioFacade.update(id, usuario); }
+    public void atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
+        this.usuarioFacade.atualizarUsuario(id, usuario);
+    }
 
     @DeleteMapping("/{id}")
-    public void remove(@PathVariable int id) {
-        usuarioFacade.remove(id);
+    public void apagarUsuario(@PathVariable Long id) {
+        this.usuarioFacade.apagarUsuario(id);
     }
 }

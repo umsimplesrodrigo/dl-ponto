@@ -1,7 +1,8 @@
 package com.devlayers.spring_dl_ponto.applications;
 
-import com.devlayers.spring_dl_ponto.entities.Justificativa;
-import com.devlayers.spring_dl_ponto.repositories.JustificativaRepository;
+import com.devlayers.spring_dl_ponto.entities.Usuario;
+import com.devlayers.spring_dl_ponto.repositories.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,31 +11,32 @@ import java.util.List;
 public class UsuarioApplication {
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
     public UsuarioApplication(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public void register(Usuario Usuario) {
-        usuarioRepository.registerUsuario(usuarios);
+    public void cadastrarUsuario(Usuario usuario) {
+        usuarioRepository.cadastrarUsuario(usuario);
     }
 
-    public void update(int id, Usuarios usuarios) {
-        UsuarioRepository.updateUsuario(id, usuario);
+    public void atualizarUsuario(Long id, Usuario usuario) {
+        this.usuarioRepository.atualizarUsuario(id, usuario);
     }
 
-    public void remove(int id) {
-        usuarioRepository.removeUsuario(id);
+    public void apagarUsuario(Long id) {
+        usuarioRepository.apagarUsuario(id);
     }
 
-    public List<Usuario> search() {
-        return usuarioRepository.searchUsuario();
+    public List<Usuario> buscarUsuarios() {
+        return usuarioRepository.buscarUsuarios();
     }
 
-    public Usuario searchById(int id) {
-        return usuarioRepository.searchById(id);
+    public Usuario buscarUsuarioPorID(Long id) {
+        return usuarioRepository.buscarUsuarioPorID(id);
     }
 
-    public boolean isEmpty() {
+    /*public boolean isEmpty() {
         return usuarioRepository.isEmpty();
-    }
+    }*/
 }

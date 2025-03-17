@@ -1,7 +1,8 @@
 package com.devlayers.spring_dl_ponto.facades;
 
-import com.devlayers.spring_dl_ponto.applications.JustificativaApplication;
-import com.devlayers.spring_dl_ponto.entities.Justificativa;
+import com.devlayers.spring_dl_ponto.applications.DepartamentoApplication;
+import com.devlayers.spring_dl_ponto.entities.Departamento;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,31 +11,32 @@ import java.util.List;
 public class DepartamentoFacade {
     private DepartamentoApplication departamentoApplication;
 
+    @Autowired
     public DepartamentoFacade(DepartamentoApplication departamentoApplication) {
         this.departamentoApplication = departamentoApplication;
     }
 
-    public void register(Departamento departamento) {
-        this.departamentoApplication.register(departamento);
+    public void cadastrarDepartamento(Departamento departamento) {
+        this.departamentoApplication.cadastrarDepartamento(departamento);
     }
 
-    public void update(int id, Departamento departamento) {
-        this.usuarioDepartamento.update(id, departamento);
+    public void atualizarDepartamento(Long id, Departamento departamento) {
+        this.departamentoApplication.atualizarDepartamento(id, departamento);
     }
 
-    public void remove(int id) {
-        this.usuarioDepartamento.remove(id);
+    public void apagarDepartamento(Long id) {
+        this.departamentoApplication.apagarDepartamento(id);
     }
 
-    public List<Departamento> search() {
-        return this.usuarioDepartamento.search();
+    public List<Departamento> buscarDepartamentos() {
+        return this.departamentoApplication.buscarDepartamentos();
     }
 
-    public Departamento searchById(int id) {
-        return this.usuarioDepartamento.searchById(id);
+    public Departamento buscarDepartamentoPorID(Long id) {
+        return this.departamentoApplication.buscarDepartamentoPorID(id);
     }
 
-    public boolean isEmpty() {
+    /*public boolean isEmpty() {
         return this.usuarioDepartamento.isEmpty();
-    }
+    }*/
 }

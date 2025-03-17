@@ -1,40 +1,42 @@
 package com.devlayers.spring_dl_ponto.applications;
 
-import com.devlayers.spring_dl_ponto.entities.Justificativa;
-import com.devlayers.spring_dl_ponto.repositories.JustificativaRepository;
+import com.devlayers.spring_dl_ponto.entities.Departamento;
+import com.devlayers.spring_dl_ponto.repositories.DepartamentoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class DepartamentoAplication {
-    private DepartaamentoRepository departaamentoRepository;
+public class DepartamentoApplication {
+    private DepartamentoRepository departamentoRepository;
 
-    public DepartamentoAplication(DepartaamentoRepository departaamentoRepository) {
-        this.departaamentoRepository = departaamentoRepository;
+    @Autowired
+    public DepartamentoApplication(DepartamentoRepository departaamentoRepository) {
+        this.departamentoRepository = departaamentoRepository;
     }
 
-    public void register(Departamento departamento) {
-        departamentoRepository.registerDepartamento(departamento);
+    public void cadastrarDepartamento(Departamento departamento) {
+        departamentoRepository.cadastrarDepartamento(departamento);
     }
 
-    public void update(int id, Usuarios usuarios) {
-        UsuarioRepository.updateUsuario(id, usuario);
+    public void atualizarDepartamento(Long id, Departamento departamento) {
+        departamentoRepository.atualizarDepartamento(id, departamento);
     }
 
-    public void remove(int id) {
-        departamentoRepository.removeDepartamento(id);
+    public void apagarDepartamento(Long id) {
+        departamentoRepository.apagarDepartamento(id);
     }
 
-    public List<Departamento> search() {
-        return departamentoRepository.searchDepartamento();
+    public List<Departamento> buscarDepartamentos() {
+        return departamentoRepository.buscarDepartamentos();
     }
 
-    public Departamento searchById(int id) {
-        return departamentoRepository.searchById(id);
+    public Departamento buscarDepartamentoPorID(Long id) {
+        return departamentoRepository.buscarDepartamentoPorID(id);
     }
 
-    public boolean isEmpty() {
+    /*public boolean isEmpty() {
         return departamentoRepository.isEmpty();
-    }
+    }*/
 }
