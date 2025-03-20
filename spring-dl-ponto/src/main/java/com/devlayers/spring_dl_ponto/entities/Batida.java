@@ -53,7 +53,7 @@ public class Batida {
     @Column(name = "ajuste")
     private String ajuste;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "horario_num")
     private Long horario_num;
 
