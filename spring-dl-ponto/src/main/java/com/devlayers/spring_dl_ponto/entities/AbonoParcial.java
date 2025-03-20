@@ -1,14 +1,35 @@
 package com.devlayers.spring_dl_ponto.entities;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "abonos-parciais")
 public class AbonoParcial {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "id_funcionario")
     private Funcionario funcionario;
+
+    @Column(name = "data")
     private LocalDate data;
+
+    @Column(name = "hora_inicio")
     private String hora_inicio;
+
+    @Column(name = "hora_fim")
     private String hora_fim;
+
+    @ManyToOne
+    @JoinColumn(name = "id_justificativa")
     private Justificativa justificativa;
+
+    @Column(name = "tipo")
     private boolean tipo;
 
     public Long getId() {

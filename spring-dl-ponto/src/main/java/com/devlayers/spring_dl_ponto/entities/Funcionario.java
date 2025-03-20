@@ -1,22 +1,61 @@
 package com.devlayers.spring_dl_ponto.entities;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "funcionarios")
 public class Funcionario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "n_folha")
     private String n_folha;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "n_identificador")
     private String n_identificador;
+
+    @ManyToOne
+    @JoinColumn(name = "id_empresa")
     private Empresa empresa;
+
+    @ManyToOne
+    @JoinColumn(name = "id_horario")
     private Horario horario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_funcao")
     private Funcao funcao;
+
+    @ManyToOne
+    @JoinColumn(name = "id_departamento")
     private Departamento departamento;
+
+    @Column(name = "admissao")
     private LocalDate admissao;
+
+    @Column(name = "demissao")
     private LocalDate demissao;
+
+    @Column(name = "afast_data_inicio")
     private LocalDate afast_data_inicio;
+
+    @Column(name = "afast_data_fim")
     private LocalDate afast_data_fim;
+
+    @Column(name = "invisivel")
     private boolean invisivel;
+
+    @Column(name = "cpf")
     private String cpf;
+
+    @Column(name = "pis")
     private String pis;
 
     public Long getId() {

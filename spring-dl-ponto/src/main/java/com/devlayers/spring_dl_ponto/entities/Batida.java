@@ -1,36 +1,93 @@
 package com.devlayers.spring_dl_ponto.entities;
 
+import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
-@Component
+@Entity
+@Table(name = "batidas")
 public class Batida {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "data")
     private LocalDate data;
+
+    @ManyToOne
+    @JoinColumn(name = "id_funcionario")
     private Funcionario funcionario;
+
+    @Column(name = "entrada1")
     private String entrada1;
+
+    @Column(name = "saida1")
     private String saida1;
+
+    @Column(name = "entrada2")
     private String entrada2;
+
+    @Column(name = "saida2")
     private String saida2;
+
+    @Column(name = "entrada3")
     private String entrada3;
+
+    @Column(name = "saida3")
     private String saida3;
+
+    @Column(name = "entrada4")
     private String entrada4;
+
+    @Column(name = "saida4")
     private String saida4;
+
+    @Column(name = "entrada5")
     private String entrada5;
+
+    @Column(name = "saida5")
     private String saida5;
+
+    @Column(name = "ajuste")
     private String ajuste;
+
+    @OneToMany
+    @JoinColumn(name = "horario_num")
     private Long horario_num;
+
+    @Column(name = "folga")
     private boolean folga;
+
+    @Column(name = "bac_entrada1")
     private String bac_entrada1;
+
+    @Column(name = "bac_saida1")
     private String bac_saida1;
+
+    @Column(name = "bac_entrada2")
     private String bac_entrada2;
+
+    @Column(name = "bac_saida2")
     private String bac_saida2;
+
+    @Column(name = "bac_entrada3")
     private String bac_entrada3;
+
+    @Column(name = "bac_saida3")
     private String bac_saida3;
+
+    @Column(name = "bac_entrada4")
     private String bac_entrada4;
+
+    @Column(name = "bac_saida4")
     private String bac_saida4;
+
+    @Column(name = "bac_entrada5")
     private String bac_entrada5;
+
+    @Column(name = "bac_saida5")
     private String bac_saida5;
 
     public Long getId() {
