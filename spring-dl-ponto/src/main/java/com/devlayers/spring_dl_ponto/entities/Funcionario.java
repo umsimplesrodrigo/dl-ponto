@@ -13,13 +13,13 @@ public class Funcionario {
     private Long id;
 
     @Column(name = "n_folha")
-    private String n_folha;
+    private String nFolha;
 
     @Column(name = "nome")
     private String nome;
 
     @Column(name = "n_identificador")
-    private String n_identificador;
+    private String nIdentificador;
 
     @ManyToOne
     @JoinColumn(name = "id_empresa")
@@ -44,10 +44,10 @@ public class Funcionario {
     private LocalDate demissao;
 
     @Column(name = "afast_data_inicio")
-    private LocalDate afast_data_inicio;
+    private LocalDate afastDataInicio;
 
     @Column(name = "afast_data_fim")
-    private LocalDate afast_data_fim;
+    private LocalDate afastDataFim;
 
     @Column(name = "invisivel")
     private boolean invisivel;
@@ -67,11 +67,11 @@ public class Funcionario {
     }
 
     public String getN_folha() {
-        return n_folha;
+        return nFolha;
     }
 
     public void setN_folha(String n_folha) {
-        this.n_folha = n_folha;
+        this.nFolha = n_folha;
     }
 
     public String getNome() {
@@ -83,11 +83,11 @@ public class Funcionario {
     }
 
     public String getN_identificador() {
-        return n_identificador;
+        return nIdentificador;
     }
 
     public void setN_identificador(String n_identificador) {
-        this.n_identificador = n_identificador;
+        this.nIdentificador = n_identificador;
     }
 
     public Empresa getEmpresa() {
@@ -139,19 +139,19 @@ public class Funcionario {
     }
 
     public LocalDate getAfast_data_inicio() {
-        return afast_data_inicio;
+        return afastDataInicio;
     }
 
     public void setAfast_data_inicio(LocalDate afast_data_inicio) {
-        this.afast_data_inicio = afast_data_inicio;
+        this.afastDataInicio = afast_data_inicio;
     }
 
     public LocalDate getAfast_data_fim() {
-        return afast_data_fim;
+        return afastDataFim;
     }
 
     public void setAfast_data_fim(LocalDate afast_data_fim) {
-        this.afast_data_fim = afast_data_fim;
+        this.afastDataFim = afast_data_fim;
     }
 
     public boolean isInvisivel() {

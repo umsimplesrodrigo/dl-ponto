@@ -55,40 +55,40 @@ public class Batida {
 
     @ManyToOne
     @JoinColumn(name = "horario_num")
-    private Long horario_num;
+    private Long horarioNum;
 
     @Column(name = "folga")
     private boolean folga;
 
     @Column(name = "bac_entrada1")
-    private String bac_entrada1;
+    private String bacEntrada1;
 
     @Column(name = "bac_saida1")
-    private String bac_saida1;
+    private String bacSaida1;
 
     @Column(name = "bac_entrada2")
-    private String bac_entrada2;
+    private String bacEntrada2;
 
     @Column(name = "bac_saida2")
-    private String bac_saida2;
+    private String bacSaida2;
 
     @Column(name = "bac_entrada3")
-    private String bac_entrada3;
+    private String bacEntrada3;
 
     @Column(name = "bac_saida3")
-    private String bac_saida3;
+    private String bacSaida3;
 
     @Column(name = "bac_entrada4")
-    private String bac_entrada4;
+    private String bacEntrada4;
 
     @Column(name = "bac_saida4")
-    private String bac_saida4;
+    private String bacSaida4;
 
     @Column(name = "bac_entrada5")
-    private String bac_entrada5;
+    private String bacEntrada5;
 
     @Column(name = "bac_saida5")
-    private String bac_saida5;
+    private String bacSaida5;
 
     public Long getId() {
         return id;
@@ -203,11 +203,11 @@ public class Batida {
     }
 
     public Long getHorario_num() {
-        return horario_num;
+        return horarioNum;
     }
 
     public void setHorario_num(Long horario_num) {
-        this.horario_num = horario_num;
+        this.horarioNum = horario_num;
     }
 
     public boolean isFolga() {
@@ -219,82 +219,82 @@ public class Batida {
     }
 
     public String getBac_entrada1() {
-        return bac_entrada1;
+        return bacEntrada1;
     }
 
     public void setBac_entrada1(String bac_entrada1) {
-        this.bac_entrada1 = bac_entrada1;
+        this.bacEntrada1 = bac_entrada1;
     }
 
     public String getBac_saida1() {
-        return bac_saida1;
+        return bacSaida1;
     }
 
     public void setBac_saida1(String bac_saida1) {
-        this.bac_saida1 = bac_saida1;
+        this.bacSaida1 = bac_saida1;
     }
 
     public String getBac_entrada2() {
-        return bac_entrada2;
+        return bacEntrada2;
     }
 
     public void setBac_entrada2(String bac_entrada2) {
-        this.bac_entrada2 = bac_entrada2;
+        this.bacEntrada2 = bac_entrada2;
     }
 
     public String getBac_saida2() {
-        return bac_saida2;
+        return bacSaida2;
     }
 
     public void setBac_saida2(String bac_saida2) {
-        this.bac_saida2 = bac_saida2;
+        this.bacSaida2 = bac_saida2;
     }
 
     public String getBac_entrada3() {
-        return bac_entrada3;
+        return bacEntrada3;
     }
 
     public void setBac_entrada3(String bac_entrada3) {
-        this.bac_entrada3 = bac_entrada3;
+        this.bacEntrada3 = bac_entrada3;
     }
 
     public String getBac_saida3() {
-        return bac_saida3;
+        return bacSaida3;
     }
 
     public void setBac_saida3(String bac_saida3) {
-        this.bac_saida3 = bac_saida3;
+        this.bacSaida3 = bac_saida3;
     }
 
     public String getBac_entrada4() {
-        return bac_entrada4;
+        return bacEntrada4;
     }
 
     public void setBac_entrada4(String bac_entrada4) {
-        this.bac_entrada4 = bac_entrada4;
+        this.bacEntrada4 = bac_entrada4;
     }
 
     public String getBac_saida4() {
-        return bac_saida4;
+        return bacSaida4;
     }
 
     public void setBac_saida4(String bac_saida4) {
-        this.bac_saida4 = bac_saida4;
+        this.bacSaida4 = bac_saida4;
     }
 
     public String getBac_entrada5() {
-        return bac_entrada5;
+        return bacEntrada5;
     }
 
     public void setBac_entrada5(String bac_entrada5) {
-        this.bac_entrada5 = bac_entrada5;
+        this.bacEntrada5 = bac_entrada5;
     }
 
     public String getBac_saida5() {
-        return bac_saida5;
+        return bacSaida5;
     }
 
     public void setBac_saida5(String bac_saida5) {
-        this.bac_saida5 = bac_saida5;
+        this.bacSaida5 = bac_saida5;
     }
 }
