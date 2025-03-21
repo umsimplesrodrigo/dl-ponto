@@ -8,8 +8,8 @@ import java.time.LocalDate;
 @Table(name = "funcionarios")
 public class Funcionario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "n_folha")

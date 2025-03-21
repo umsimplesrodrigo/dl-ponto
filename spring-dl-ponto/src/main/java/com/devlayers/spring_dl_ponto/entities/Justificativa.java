@@ -6,8 +6,8 @@ import jakarta.persistence.*;
 @Table(name = "justificativas")
 public class Justificativa {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nome")
@@ -17,7 +17,7 @@ public class Justificativa {
     private String descricao;
 
     @Column(name = "lancar_falta")
-    private boolean lancar_falta;
+    private boolean lancarFalta;
 
     public Long getId() {
         return id;
@@ -44,10 +44,10 @@ public class Justificativa {
     }
 
     public boolean isLancar_falta() {
-        return lancar_falta;
+        return lancarFalta;
     }
 
     public void setLancar_falta(boolean lancar_falta) {
-        this.lancar_falta = lancar_falta;
+        this.lancarFalta = lancar_falta;
     }
 }

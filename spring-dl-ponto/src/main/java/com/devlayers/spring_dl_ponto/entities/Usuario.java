@@ -1,16 +1,51 @@
 package com.devlayers.spring_dl_ponto.entities;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "administrador")
     private boolean administrador;
+
+    @Column(name = "senha")
     private String senha;
+
+    @Column(name = "bloqueado")
     private boolean bloqueado;
+
+    @Column(name = "desativado")
     private boolean desativado;
+
+    @Column(name = "email")
     private String email;
-    private LocalDateTime ultimo_login;
+
+    @Column(name = "ultimo_login")
+    private LocalDateTime ultimoLogin;
+
+    public Usuario() {
+    }
+
+    public Usuario(Long id, String nome, boolean administrador, String senha, boolean bloqueado, boolean desativado, String email, LocalDateTime ultimoLogin) {
+        this.id = id;
+        this.nome = nome;
+        this.administrador = administrador;
+        this.senha = senha;
+        this.bloqueado = bloqueado;
+        this.desativado = desativado;
+        this.email = email;
+        this.ultimoLogin = ultimoLogin;
+    }
 
     public Long getId() {
         return id;
@@ -69,10 +104,10 @@ public class Usuario {
     }
 
     public LocalDateTime getUltimo_login() {
-        return ultimo_login;
+        return ultimoLogin;
     }
 
     public void setUltimo_login(LocalDateTime ultimo_login) {
-        this.ultimo_login = ultimo_login;
+        this.ultimoLogin = ultimo_login;
     }
 }

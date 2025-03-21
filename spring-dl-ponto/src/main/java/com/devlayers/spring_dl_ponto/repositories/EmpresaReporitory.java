@@ -45,6 +45,7 @@ public class EmpresaReporitory {
         empresaInMemory.setUsa_cpf(empresa.isUsa_cpf());
         empresaInMemory.setN_folha(empresa.getN_folha());
         empresaInMemory.setTelefone(empresa.getTelefone());
+        empresaInMemory.setFeriados(empresa.getFeriados());
     }
 
     public boolean isEmpty() {

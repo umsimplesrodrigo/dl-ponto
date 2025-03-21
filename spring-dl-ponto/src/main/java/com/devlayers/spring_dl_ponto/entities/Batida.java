@@ -1,7 +1,6 @@
 package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity
@@ -54,7 +53,7 @@ public class Batida {
 
     @ManyToOne
     @JoinColumn(name = "horario_num")
-    private Long horarioNum;
+    private Horario horarioNum;
 
     @Column(name = "folga")
     private boolean folga;
@@ -92,7 +91,7 @@ public class Batida {
     public Batida() {
     }
 
-    public Batida(Long id, LocalDate data, Funcionario funcionario, String entrada1, String saida1, String entrada2, String saida2, String entrada3, String saida3, String entrada4, String saida4, String entrada5, String saida5, String ajuste, Long horarioNum, boolean folga, String bacEntrada1, String bacSaida1, String bacEntrada2, String bacSaida2, String bacEntrada3, String bacSaida3, String bacEntrada4, String bacSaida4, String bacEntrada5, String bacSaida5) {
+    public Batida(Long id, LocalDate data, Funcionario funcionario, String entrada1, String saida1, String entrada2, String saida2, String entrada3, String saida3, String entrada4, String saida4, String entrada5, String saida5, String ajuste, Horario horarioNum, boolean folga, String bacEntrada1, String bacSaida1, String bacEntrada2, String bacSaida2, String bacEntrada3, String bacSaida3, String bacEntrada4, String bacSaida4, String bacEntrada5, String bacSaida5) {
         this.id = id;
         this.data = data;
         this.funcionario = funcionario;
@@ -233,11 +232,11 @@ public class Batida {
         this.ajuste = ajuste;
     }
 
-    public Long getHorario_num() {
+    public Horario getHorario_num() {
         return horarioNum;
     }
 
-    public void setHorario_num(Long horario_num) {
+    public void setHorario_num(Horario horario_num) {
         this.horarioNum = horario_num;
     }
 

@@ -13,6 +13,14 @@ public class Funcao {
     @Column(name = "descricao")
     private String descricao;
 
+    public Funcao() {
+    }
+
+    public Funcao(Long id, String descricao) {
+        this.id = id;
+        this.descricao = descricao;
+    }
+
     public Long getId() {
         return id;
     }
