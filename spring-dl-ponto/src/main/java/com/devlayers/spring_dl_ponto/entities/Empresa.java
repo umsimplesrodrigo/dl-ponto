@@ -1,21 +1,60 @@
 package com.devlayers.spring_dl_ponto.entities;
 
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "empresas")
 public class Empresa {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "inscricao")
     private String inscricao;
+
+    @Column(name = "cnpj")
     private String cnpj;
+
+    @Column(name = "endereco")
     private String endereco;
+
+    @Column(name = "bairro")
     private String bairro;
+
+    @Column(name = "cidade")
     private String cidade;
+
+    @Column(name = "cep")
     private String cep;
+
+    @Column(name = "estado")
     private String estado;
-    private String cartao_responsavel;
-    private String cartao_cargo;
-    private String responsavel_email;
+
+    @Column(name = "cartao_Responsavel")
+    private String cartaoResponsavel;
+
+    @Column(name = "cartao_cargo")
+    private String cartaoCargo;
+
+    @Column(name = "responsavel_email")
+    private String responsavelEmail;
     private boolean usa_cpf;
+
+    @Column(name = "nFolha")
     private String n_folha;
+
+    @Column(name = "telefone")
     private String telefone;
+
+    @ManyToMany(mappedBy = "empresas")
+    private List<Feriado> feriados = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -90,27 +129,27 @@ public class Empresa {
     }
 
     public String getCartao_responsavel() {
-        return cartao_responsavel;
+        return cartaoResponsavel;
     }
 
     public void setCartao_responsavel(String cartao_responsavel) {
-        this.cartao_responsavel = cartao_responsavel;
+        this.cartaoResponsavel = cartao_responsavel;
     }
 
     public String getCartao_cargo() {
-        return cartao_cargo;
+        return cartaoCargo;
     }
 
     public void setCartao_cargo(String cartao_cargo) {
-        this.cartao_cargo = cartao_cargo;
+        this.cartaoCargo = cartao_cargo;
     }
 
     public String getResponsavel_email() {
-        return responsavel_email;
+        return responsavelEmail;
     }
 
     public void setResponsavel_email(String responsavel_email) {
-        this.responsavel_email = responsavel_email;
+        this.responsavelEmail = responsavel_email;
     }
 
     public boolean isUsa_cpf() {

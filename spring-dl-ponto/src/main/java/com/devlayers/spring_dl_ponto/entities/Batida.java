@@ -55,7 +55,7 @@ public class Batida {
 
     @ManyToOne
     @JoinColumn(name = "horario_num")
-    private Long horarioNum;
+    private Horario horarioNum;
 
     @Column(name = "folga")
     private boolean folga;
@@ -202,11 +202,11 @@ public class Batida {
         this.ajuste = ajuste;
     }
 
-    public Long getHorario_num() {
+    public Horario getHorario_num() {
         return horarioNum;
     }
 
-    public void setHorario_num(Long horario_num) {
+    public void setHorario_num(Horario horario_num) {
         this.horarioNum = horario_num;
     }
 
