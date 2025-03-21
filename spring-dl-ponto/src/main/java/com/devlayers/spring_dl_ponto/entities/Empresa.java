@@ -1,20 +1,57 @@
 package com.devlayers.spring_dl_ponto.entities;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "empresas")
 public class Empresa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "inscricao")
     private String inscricao;
+
+    @Column(name = "cnpj")
     private String cnpj;
+
+    @Column(name = "endereco")
     private String endereco;
+
+    @Column(name = "bairro")
     private String bairro;
+
+    @Column(name = "cidade")
     private String cidade;
+
+    @Column(name = "cep")
     private String cep;
+
+    @Column(name = "estado")
     private String estado;
+
+    @Column(name = "cartao_responsavel")
     private String cartao_responsavel;
+
+    @Column(name = "cartao_cargo")
     private String cartao_cargo;
+
+    @Column(name = "responsavel_email")
     private String responsavel_email;
+
+    @Column(name = "usa_cpf")
     private boolean usa_cpf;
+
+    @Column(name = "n_folha")
     private String n_folha;
+
+    @Column(name = "telefone")
     private String telefone;
 
     public Long getId() {
