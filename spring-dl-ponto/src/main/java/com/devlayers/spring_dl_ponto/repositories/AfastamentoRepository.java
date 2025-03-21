@@ -30,8 +30,8 @@ public class AfastamentoRepository {
         Afastamento afastamentoInMemory = this.buscarAfastamentoPorID(id);
 
         afastamentoInMemory.setFuncionario(afastamento.getFuncionario());
-        afastamentoInMemory.setData_inicio(afastamento.getData_inicio());
-        afastamentoInMemory.setData_fim(afastamento.getData_fim());
+        afastamentoInMemory.setDataInicio(afastamento.getDataInicio());
+        afastamentoInMemory.setDataFim(afastamento.getDataFim());
         afastamentoInMemory.setJustificativa(afastamento.getJustificativa());
         afastamentoInMemory.setObs(afastamento.getObs());
     }

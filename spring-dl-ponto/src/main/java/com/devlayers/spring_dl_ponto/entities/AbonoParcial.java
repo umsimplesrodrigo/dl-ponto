@@ -20,10 +20,10 @@ public class AbonoParcial {
     private LocalDate data;
 
     @Column(name = "hora_inicio")
-    private String hora_inicio;
+    private String horaInicio;
 
     @Column(name = "hora_fim")
-    private String hora_fim;
+    private String horaFim;
 
     @ManyToOne
     @JoinColumn(name = "id_justificativa")
@@ -31,6 +31,19 @@ public class AbonoParcial {
 
     @Column(name = "tipo")
     private boolean tipo;
+
+    public AbonoParcial() {
+    }
+
+    public AbonoParcial(Long id, Funcionario funcionario, LocalDate data, String horaInicio, String horaFim, Justificativa justificativa, boolean tipo) {
+        this.id = id;
+        this.funcionario = funcionario;
+        this.data = data;
+        this.horaInicio = horaInicio;
+        this.horaFim = horaFim;
+        this.justificativa = justificativa;
+        this.tipo = tipo;
+    }
 
     public Long getId() {
         return id;
@@ -57,19 +70,19 @@ public class AbonoParcial {
     }
 
     public String getHora_inicio() {
-        return hora_inicio;
+        return horaInicio;
     }
 
     public void setHora_inicio(String hora_inicio) {
-        this.hora_inicio = hora_inicio;
+        this.horaInicio = hora_inicio;
     }
 
     public String getHora_fim() {
-        return hora_fim;
+        return horaFim;
     }
 
     public void setHora_fim(String hora_fim) {
-        this.hora_fim = hora_fim;
+        this.horaFim = hora_fim;
     }
 
     public Justificativa getJustificativa() {

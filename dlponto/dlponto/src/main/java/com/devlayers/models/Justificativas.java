@@ -1,23 +1,22 @@
-package com.devlayers.spring_dl_ponto.entities;
+package com.devlayers.models;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "justificativas")
-public class Justificativa {
+public class Justificativas {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome")
+    @Column
     private String nome;
 
-    @Column(name = "descricao")
+    @Column
     private String descricao;
 
-    @Column(name = "lancar_falta")
-    private boolean lancarFalta;
+    @Column
+    private Boolean lancar_falta;
 
     public Long getId() {
         return id;
@@ -43,11 +42,11 @@ public class Justificativa {
         this.descricao = descricao;
     }
 
-    public boolean isLancar_falta() {
-        return lancarFalta;
+    public Boolean getLancar_falta() {
+        return lancar_falta;
     }
 
-    public void setLancar_falta(boolean lancar_falta) {
-        this.lancarFalta = lancar_falta;
+    public void setLancar_falta(Boolean lancar_falta) {
+        this.lancar_falta = lancar_falta;
     }
 }

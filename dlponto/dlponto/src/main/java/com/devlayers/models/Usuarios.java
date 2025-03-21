@@ -1,51 +1,35 @@
-package com.devlayers.spring_dl_ponto.entities;
+package com.devlayers.models;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "usuarios")
-public class Usuario {
+public class Usuarios {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome")
+    @Column(nullable = false, length = 255)
     private String nome;
 
-    @Column(name = "administrador")
+    @Column(nullable = false)
     private boolean administrador;
 
-    @Column(name = "senha")
+    @Column(nullable = false, length = 255)
     private String senha;
 
-    @Column(name = "bloqueado")
+    @Column(nullable = false)
     private boolean bloqueado;
 
-    @Column(name = "desativado")
+    @Column(nullable = false)
     private boolean desativado;
 
-    @Column(name = "email")
+    @Column(nullable = false, unique = true, length = 255)
     private String email;
 
-    @Column(name = "ultimo_login")
-    private LocalDateTime ultimoLogin;
-
-    public Usuario() {
-    }
-
-    public Usuario(Long id, String nome, boolean administrador, String senha, boolean bloqueado, boolean desativado, String email, LocalDateTime ultimoLogin) {
-        this.id = id;
-        this.nome = nome;
-        this.administrador = administrador;
-        this.senha = senha;
-        this.bloqueado = bloqueado;
-        this.desativado = desativado;
-        this.email = email;
-        this.ultimoLogin = ultimoLogin;
-    }
+    @Column
+    private LocalDateTime ultimo_login;
 
     public Long getId() {
         return id;
@@ -104,10 +88,10 @@ public class Usuario {
     }
 
     public LocalDateTime getUltimo_login() {
-        return ultimoLogin;
+        return ultimo_login;
     }
 
     public void setUltimo_login(LocalDateTime ultimo_login) {
-        this.ultimoLogin = ultimo_login;
+        this.ultimo_login = ultimo_login;
     }
 }

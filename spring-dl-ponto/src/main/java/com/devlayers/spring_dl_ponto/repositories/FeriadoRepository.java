@@ -32,6 +32,7 @@ public class FeriadoRepository {
 
         feriadoInMemory.setDescricao(feriado.getDescricao());
         feriadoInMemory.setData(feriado.getData());
+        feriadoInMemory.setEmpresas(feriado.getEmpresas());
     }
 
     public void apagarFeriado(Long id) {
