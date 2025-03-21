@@ -1,6 +1,13 @@
 <img src="imagens_readme/logo_devlayers.png" width="400">
 
 # DevLayers - Projeto DL Ponto
+## Business Model Canvas
+|Principais Parceiros|Principais Atividades|Proposta de Valor|Relacionamento|Canais|Segmentos de clientes|Estrutura de custos|Fontes de renda|
+|--------------------|---------------------|-----------------|--------------|------|---------------------|-------------------|---------------|
+|Empresas que precisam de um sistema de controle de ponto|Desenvolvimento e manutenção do software|Facilitar o controle de jornada dos funcionários|Suporte via e-mail/chat/WhatsApp|Site oficial para apresentação e aquisição do sistema|Pequenas e médias empresas que precisam de um controle de ponto eficiente|Desenvolvimento e manutenção do sistema|Venda de licenças do software|
+Desenvolvedores|Suporte técnico para empresas/clientes|Interface intuitiva e fácil de usar|Atualizações e melhorias contínuas|null|Empresas com funcionários remotos ou em diferentes turnos|Infraestrutura (hospedagem, servidores, banco de dados)|Consultoria para empresas que precisem de treinamentos|
+|null|Implementação de novas funcionalidades conforme necessidades do mercado|Relatórios automatizados para análise e conformidade|Comunidade ou fórum para feedback e sugestões|null|null|Suporte e atendimento ao cliente|null|
+|null|Treinamento para empresas/clientes|Possibilidade de expansão para novos recursos no futuro|null|null|null|Marketing e divulgação|null|
 ## Histórico de Revisão
 | Data   | Versão | Descrição | Autor |
 |--------|--------|-----------|-------|
@@ -96,8 +103,11 @@ O sistema de ponto tem como objetivo gerenciar o controle de jornada de trabalho
  - O sistema deve permitir a exportação de relatórios em formatos como PDF ou Excel.
 
 ## Equipe
- - <img src="imagens_readme/lider.png" width="20">[ Rodrigo Oliveira](https://github.com/umsimplesrodrigo)
- - <img src="imagens_readme/quadrado.png" width="20">[ Laís Santana](https://github.com/Lys-31)
- - <img src="imagens_readme/triangulo.png" width="20">[ Vinícius Almeida](https://github.com/vinisantosx)
- - <img src="imagens_readme/circulo.png" width="20">[ João Felipe](https://github.com/TxeiraFp)
- - <img src="imagens_readme/circulo.png" width="20">[ Matheus Alcântara](https://github.com/ELPATON)
+
+<ul>
+<li><img src="imagens_readme/macaco-cirugiao-umsimples.png" width="30px"><a href="https://github.com/umsimplesrodrigo">Rodrigo Oliveira</a></li>
+<li><img src="imagens_readme/quadrado.png" width="30px"><a href="https://github.com/Lys-31">Laís Santana</a></li>
+<li><img src="imagens_readme/triangulo.png" width="30px"><a href="https://github.com/vinisantosx">Vinícius Almeida</a></li>
+<li><img src="imagens_readme/circulo.png" width="30px"><a href="https://github.com/TxeiraFp">João Felipe</a></li>
+<li><img src="imagens_readme/circulo.png" width="30px"><a href="https://github.com/ELPATON">Matheus Alcântara</a></li>
+</ul>
