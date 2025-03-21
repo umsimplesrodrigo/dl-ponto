@@ -8,11 +8,12 @@ import java.time.LocalDate;
 public class Afastamento {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "funcionario_id", nullable = false)
+    @JoinColumn(name = "id_funcionario", nullable = false)
     private Funcionario funcionario;
 
     @Column(name = "data_inicio", nullable = false)
@@ -22,13 +23,12 @@ public class Afastamento {
     private LocalDate dataFim;
 
     @ManyToOne
-    @JoinColumn(name = "justificativa_id", nullable = false)
+    @JoinColumn(name = "id_justificativa", nullable = false)
     private Justificativa justificativa;
 
     @Column(name = "observacao", length = 255)
     private String obs;
 
-    // Construtores
     public Afastamento() {}
 
     public Afastamento(Funcionario funcionario, LocalDate dataInicio, LocalDate dataFim, Justificativa justificativa, String obs) {
@@ -39,7 +39,6 @@ public class Afastamento {
         this.obs = obs;
     }
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -88,4 +87,3 @@ public class Afastamento {
         this.obs = obs;
     }
 }
-

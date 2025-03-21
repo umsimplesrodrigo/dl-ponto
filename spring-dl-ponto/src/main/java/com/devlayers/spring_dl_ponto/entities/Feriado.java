@@ -8,8 +8,8 @@ import java.time.LocalDate;
 public class Feriado {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "descricao", nullable = false, length = 100)
@@ -18,7 +18,6 @@ public class Feriado {
     @Column(name = "data", nullable = false)
     private LocalDate data;
 
-    // Construtores
     public Feriado() {}
 
     public Feriado(String descricao, LocalDate data) {
@@ -26,7 +25,6 @@ public class Feriado {
         this.data = data;
     }
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -51,4 +49,3 @@ public class Feriado {
         this.data = data;
     }
 }
-
