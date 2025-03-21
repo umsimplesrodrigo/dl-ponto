@@ -1,89 +1,65 @@
-package com.devlayers.spring_dl_ponto.entities;
+package com.devlayers.models;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "horarios")
-public class Horario {
+public class Horarios {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "numero")
     private Long id;
 
-    @Column(name = "dia_semana")
-    private Long diaSemana;
+    @Column
+    private Long dia_semana;
 
-    @Column(name = "nome")
+    @Column
     private String nome;
 
-    @Column(name = "entrada1")
+    @Column
     private String entrada1;
 
-    @Column(name = "saida1")
+    @Column
     private String saida1;
 
-    @Column(name = "entrada2")
+    @Column
     private String entrada2;
 
-    @Column(name = "saida2")
+    @Column
     private String saida2;
 
-    @Column(name = "entrada3")
+    @Column
     private String entrada3;
 
-    @Column(name = "saida3")
+    @Column
     private String saida3;
 
-    @Column(name = "entrada4")
+    @Column
     private String entrada4;
 
-    @Column(name = "saida4")
+    @Column
     private String saida4;
 
-    @Column(name = "entrada5")
+    @Column
     private String entrada5;
 
-    @Column(name = "saida5")
+    @Column
     private String saida5;
 
-    @Column(name = "extra")
+    @Column
     private boolean extra;
 
-    @Column(name = "compensado")
+    @Column
     private boolean compensado;
 
-    @Column(name = "carga_diaria")
-    private boolean cargaDiaria;
+    @Column
+    private boolean carga_diaria;
 
-    @Column(name = "neutro")
+    @Column
     private boolean neutro;
 
-    @Column(name = "carga")
+    @Column
     private Long carga;
-
-    public Horario() {
-    }
-
-    public Horario(Long id, Long diaSemana, String nome, String entrada1, String saida1, String entrada2, String saida2, String entrada3, String saida3, String entrada4, String saida4, String entrada5, String saida5, boolean extra, boolean compensado, boolean cargaDiaria, boolean neutro, Long carga) {
-        this.id = id;
-        this.diaSemana = diaSemana;
-        this.nome = nome;
-        this.entrada1 = entrada1;
-        this.saida1 = saida1;
-        this.entrada2 = entrada2;
-        this.saida2 = saida2;
-        this.entrada3 = entrada3;
-        this.saida3 = saida3;
-        this.entrada4 = entrada4;
-        this.saida4 = saida4;
-        this.entrada5 = entrada5;
-        this.saida5 = saida5;
-        this.extra = extra;
-        this.compensado = compensado;
-        this.cargaDiaria = cargaDiaria;
-        this.neutro = neutro;
-        this.carga = carga;
-    }
 
     public Long getId() {
         return id;
@@ -94,11 +70,11 @@ public class Horario {
     }
 
     public Long getDia_semana() {
-        return diaSemana;
+        return dia_semana;
     }
 
     public void setDia_semana(Long dia_semana) {
-        this.diaSemana = dia_semana;
+        this.dia_semana = dia_semana;
     }
 
     public String getNome() {
@@ -206,11 +182,11 @@ public class Horario {
     }
 
     public boolean isCarga_diaria() {
-        return cargaDiaria;
+        return carga_diaria;
     }
 
     public void setCarga_diaria(boolean carga_diaria) {
-        this.cargaDiaria = carga_diaria;
+        this.carga_diaria = carga_diaria;
     }
 
     public boolean isNeutro() {

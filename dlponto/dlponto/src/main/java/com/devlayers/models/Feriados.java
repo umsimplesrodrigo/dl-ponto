@@ -1,25 +1,21 @@
-package com.devlayers.spring_dl_ponto.entities;
+package com.devlayers.models;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
-@Table(name = "departamentos")
-public class Departamento {
+@Table(name = "feriados")
+public class Feriados {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "descricao")
+    @Column
     private String descricao;
 
-    public Departamento() {
-    }
-
-    public Departamento(Long id, String descricao) {
-        this.id = id;
-        this.descricao = descricao;
-    }
+    @Column
+    private LocalDate data;
 
     public Long getId() {
         return id;
@@ -35,5 +31,13 @@ public class Departamento {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 }
