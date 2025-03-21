@@ -46,5 +46,10 @@ public class HorarioRepository {
         horarioInMemory.setSaida4(horario.getSaida4());
         horarioInMemory.setEntrada5(horario.getEntrada5());
         horarioInMemory.setSaida5(horario.getSaida5());
+        horarioInMemory.setExtra(horario.isExtra());
+        horarioInMemory.setCompensado(horario.isCompensado());
+        horarioInMemory.setCarga_diaria(horario.isCarga_diaria());
+        horarioInMemory.setNeutro(horario.isNeutro());
+        horarioInMemory.setCarga(horario.getCarga());
     }
 }
