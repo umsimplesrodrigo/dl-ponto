@@ -1,21 +1,84 @@
 package com.devlayers.spring_dl_ponto.entities;
 
+import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+
+@Entity
+@Table(name = "empresas")
 public class Empresa {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "inscricao")
     private String inscricao;
+
+    @Column(name = "cnpj")
     private String cnpj;
+
+    @Column(name = "endereco")
     private String endereco;
+
+    @Column(name = "bairro")
     private String bairro;
+
+    @Column(name = "cidade")
     private String cidade;
+
+    @Column(name = "cep")
     private String cep;
+
+    @Column(name = "estado")
     private String estado;
-    private String cartao_responsavel;
-    private String cartao_cargo;
-    private String responsavel_email;
-    private boolean usa_cpf;
-    private String n_folha;
+
+    @Column(name = "cartao_responsavel")
+    private String cartaoResponsavel;
+
+    @Column(name = "cartao_cargo")
+    private String cartaoCargo;
+
+    @Column(name = "responsavel_email")
+    private String responsavelEmail;
+
+    @Column(name = "usa_cpf")
+    private boolean usaCpf;
+
+    @Column(name = "n_folha")
+    private String nFolha;
+
+    @Column(name = "telefone")
     private String telefone;
+
+    @ManyToMany(mappedBy = "empresas")
+    private List<Feriado> feriados = new ArrayList<>();
+
+    public Empresa() {
+    }
+
+    public Empresa(Long id, String nome, String inscricao, String cnpj, String endereco, String bairro, String cidade, String cep, String estado, String cartaoResponsavel, String cartaoCargo, String responsavelEmail, boolean usaCpf, String nFolha, String telefone, List<Feriado> feriados) {
+        this.id = id;
+        this.nome = nome;
+        this.inscricao = inscricao;
+        this.cnpj = cnpj;
+        this.endereco = endereco;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.cep = cep;
+        this.estado = estado;
+        this.cartaoResponsavel = cartaoResponsavel;
+        this.cartaoCargo = cartaoCargo;
+        this.responsavelEmail = responsavelEmail;
+        this.usaCpf = usaCpf;
+        this.nFolha = nFolha;
+        this.telefone = telefone;
+        this.feriados = feriados;
+    }
 
     public Long getId() {
         return id;
@@ -90,43 +153,43 @@ public class Empresa {
     }
 
     public String getCartao_responsavel() {
-        return cartao_responsavel;
+        return cartaoResponsavel;
     }
 
     public void setCartao_responsavel(String cartao_responsavel) {
-        this.cartao_responsavel = cartao_responsavel;
+        this.cartaoResponsavel = cartao_responsavel;
     }
 
     public String getCartao_cargo() {
-        return cartao_cargo;
+        return cartaoCargo;
     }
 
     public void setCartao_cargo(String cartao_cargo) {
-        this.cartao_cargo = cartao_cargo;
+        this.cartaoCargo = cartao_cargo;
     }
 
     public String getResponsavel_email() {
-        return responsavel_email;
+        return responsavelEmail;
     }
 
     public void setResponsavel_email(String responsavel_email) {
-        this.responsavel_email = responsavel_email;
+        this.responsavelEmail = responsavel_email;
     }
 
     public boolean isUsa_cpf() {
-        return usa_cpf;
+        return usaCpf;
     }
 
     public void setUsa_cpf(boolean usa_cpf) {
-        this.usa_cpf = usa_cpf;
+        this.usaCpf = usa_cpf;
     }
 
     public String getN_folha() {
-        return n_folha;
+        return nFolha;
     }
 
     public void setN_folha(String n_folha) {
-        this.n_folha = n_folha;
+        this.nFolha = n_folha;
     }
 
     public String getTelefone() {
@@ -135,5 +198,13 @@ public class Empresa {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public List<Feriado> getFeriados() {
+        return feriados;
+    }
+
+    public void setFeriados(List<Feriado> feriados) {
+        this.feriados = feriados;
     }
 }
