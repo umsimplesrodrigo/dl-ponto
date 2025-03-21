@@ -1,9 +1,22 @@
 package com.devlayers.spring_dl_ponto.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "justificativas")
 public class Justificativa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "descricao")
     private String descricao;
+
+    @Column(name = "lancar_falta")
     private boolean lancar_falta;
 
     public Long getId() {

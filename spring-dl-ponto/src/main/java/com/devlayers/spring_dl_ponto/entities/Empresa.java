@@ -1,7 +1,5 @@
 package com.devlayers.spring_dl_ponto.entities;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import jakarta.persistence.*;
 
 @Entity
