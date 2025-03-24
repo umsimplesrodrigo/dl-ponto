@@ -19,6 +19,22 @@ public class Justificativa {
     @Column(name = "lancar_falta")
     private boolean lancarFalta;
 
+    public Justificativa() {
+    }
+
+    public Justificativa(String nome, String descricao, boolean lancarFalta) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.lancarFalta = lancarFalta;
+    }
+
+    public Justificativa(Long id, String nome, String descricao, boolean lancarFalta) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.lancarFalta = lancarFalta;
+    }
+
     public Long getId() {
         return id;
     }
