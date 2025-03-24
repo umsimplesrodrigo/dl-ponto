@@ -38,7 +38,7 @@ public class FuncionarioController {
     }
 
     @DeleteMapping("/{id}")
-    public void apagarFuncionario(Long id) {
+    public void apagarFuncionario(@PathVariable Long id) {
         this.funcionarioFacade.apagarFuncionario(id);
     }
 }

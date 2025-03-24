@@ -6,6 +6,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "batidas")
 public class Batida {
+    private Long idFuncionario;
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -89,6 +91,34 @@ public class Batida {
     private String bacSaida5;
 
     public Batida() {
+    }
+
+    public Batida(LocalDate data, Funcionario funcionario, String entrada1, String saida1, String entrada2, String saida2, String entrada3, String saida3, String entrada4, String saida4, String entrada5, String saida5, String ajuste, Horario horarioNum, boolean folga, String bacEntrada1, String bacSaida1, String bacEntrada2, String bacSaida2, String bacEntrada3, String bacSaida3, String bacEntrada4, String bacSaida4, String bacEntrada5, String bacSaida5) {
+        this.data = data;
+        this.funcionario = funcionario;
+        this.entrada1 = entrada1;
+        this.saida1 = saida1;
+        this.entrada2 = entrada2;
+        this.saida2 = saida2;
+        this.entrada3 = entrada3;
+        this.saida3 = saida3;
+        this.entrada4 = entrada4;
+        this.saida4 = saida4;
+        this.entrada5 = entrada5;
+        this.saida5 = saida5;
+        this.ajuste = ajuste;
+        this.horarioNum = horarioNum;
+        this.folga = folga;
+        this.bacEntrada1 = bacEntrada1;
+        this.bacSaida1 = bacSaida1;
+        this.bacEntrada2 = bacEntrada2;
+        this.bacSaida2 = bacSaida2;
+        this.bacEntrada3 = bacEntrada3;
+        this.bacSaida3 = bacSaida3;
+        this.bacEntrada4 = bacEntrada4;
+        this.bacSaida4 = bacSaida4;
+        this.bacEntrada5 = bacEntrada5;
+        this.bacSaida5 = bacSaida5;
     }
 
     public Batida(Long id, LocalDate data, Funcionario funcionario, String entrada1, String saida1, String entrada2, String saida2, String entrada3, String saida3, String entrada4, String saida4, String entrada5, String saida5, String ajuste, Horario horarioNum, boolean folga, String bacEntrada1, String bacSaida1, String bacEntrada2, String bacSaida2, String bacEntrada3, String bacSaida3, String bacEntrada4, String bacSaida4, String bacEntrada5, String bacSaida5) {
@@ -326,5 +356,13 @@ public class Batida {
 
     public void setBac_saida5(String bac_saida5) {
         this.bacSaida5 = bac_saida5;
+    }
+
+    public Long getIdFuncionario() {
+        return idFuncionario;
+    }
+
+    public void setIdFuncionario(Long idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 }

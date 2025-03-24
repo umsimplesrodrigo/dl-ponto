@@ -1,51 +1,54 @@
 package com.devlayers.spring_dl_ponto.repositories;
 
 import com.devlayers.spring_dl_ponto.entities.Funcionario;
+import com.devlayers.spring_dl_ponto.repositories.jpa.FuncionarioJPA;
 import org.springframework.stereotype.Repository;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class FuncionarioRepository {
-    private List<Funcionario> funcionarios = new ArrayList<>();
+    private final FuncionarioJPA funcionarioJPA;
+
+    public FuncionarioRepository(FuncionarioJPA funcionarioJPA) {
+        this.funcionarioJPA = funcionarioJPA;
+    }
 
     public List<Funcionario> buscarFuncionarios() {
-        return funcionarios;
+        return this.funcionarioJPA.findAll();
     }
 
     public Funcionario buscarFuncionarioPorID(Long id) {
-        return funcionarios
-                .stream()
-                .filter(f -> f.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+        return this.funcionarioJPA.findById(id).orElse(null);
     }
 
     public void cadastrarFuncionario(Funcionario funcionario) {
-        funcionarios.add(funcionario);
+        this.funcionarioJPA.save(funcionario);
     }
 
     public void apagarFuncionario(Long id) {
-        funcionarios.removeIf(f -> f.getId().equals(id));
+        this.funcionarioJPA.deleteById(id);
     }
 
     public void editarFuncionario(Long id, Funcionario funcionario) {
-        Funcionario funcionarioInMemory = this.buscarFuncionarioPorID(id);
+        Funcionario funcionarioInDb = this.funcionarioJPA.findById(id).orElse(null);
+        if (funcionarioInDb != null) {
+            funcionarioInDb.setN_folha(funcionario.getN_folha());
+            funcionarioInDb.setNome(funcionario.getNome());
+            funcionarioInDb.setN_identificador(funcionario.getN_identificador());
+            funcionarioInDb.setEmpresa(funcionario.getEmpresa());
+            funcionarioInDb.setAdmissao(funcionario.getAdmissao());
+            funcionarioInDb.setHorario(funcionario.getHorario());
+            funcionarioInDb.setFuncao(funcionario.getFuncao());
+            funcionarioInDb.setDepartamento(funcionario.getDepartamento());
+            funcionarioInDb.setAdmissao(funcionario.getAdmissao());
+            funcionarioInDb.setDemissao(funcionario.getDemissao());
+            funcionarioInDb.setAfast_data_inicio(funcionario.getAfast_data_inicio());
+            funcionarioInDb.setAfast_data_fim(funcionario.getAfast_data_fim());
+            funcionarioInDb.setInvisivel(funcionario.isInvisivel());
+            funcionarioInDb.setCpf(funcionario.getCpf());
+            funcionarioInDb.setPis(funcionario.getPis());
 
-        funcionarioInMemory.setN_folha(funcionario.getN_folha());
-        funcionarioInMemory.setNome(funcionario.getNome());
-        funcionarioInMemory.setN_identificador(funcionario.getN_identificador());
-        funcionarioInMemory.setEmpresa(funcionario.getEmpresa());
-        funcionarioInMemory.setAdmissao(funcionario.getAdmissao());
-        funcionarioInMemory.setHorario(funcionario.getHorario());
-        funcionarioInMemory.setFuncao(funcionario.getFuncao());
-        funcionarioInMemory.setDepartamento(funcionario.getDepartamento());
-        funcionarioInMemory.setAdmissao(funcionario.getAdmissao());
-        funcionarioInMemory.setDemissao(funcionario.getDemissao());
-        funcionarioInMemory.setAfast_data_inicio(funcionario.getAfast_data_inicio());
-        funcionarioInMemory.setAfast_data_fim(funcionario.getAfast_data_fim());
-        funcionarioInMemory.setInvisivel(funcionario.isInvisivel());
-        funcionarioInMemory.setCpf(funcionario.getCpf());
-        funcionarioInMemory.setPis(funcionario.getPis());
+            this.funcionarioJPA.save(funcionario);
+        }
     }
 }
