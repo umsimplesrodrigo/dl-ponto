@@ -1,7 +1,9 @@
 package com.devlayers.spring_dl_ponto.controllers;
 
 import com.devlayers.spring_dl_ponto.entities.Batida;
+import com.devlayers.spring_dl_ponto.entities.Funcionario;
 import com.devlayers.spring_dl_ponto.facades.BatidaFacade;
+import com.devlayers.spring_dl_ponto.repositories.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -61,6 +61,23 @@ public class Funcionario {
     public Funcionario() {
     }
 
+    public Funcionario(String nFolha, String nome, String nIdentificador, Empresa empresa, Horario horario, Funcao funcao, Departamento departamento, LocalDate admissao, LocalDate demissao, LocalDate afastDataInicio, LocalDate afastDataFim, boolean invisivel, String cpf, String pis) {
+        this.nFolha = nFolha;
+        this.nome = nome;
+        this.nIdentificador = nIdentificador;
+        this.empresa = empresa;
+        this.horario = horario;
+        this.funcao = funcao;
+        this.departamento = departamento;
+        this.admissao = admissao;
+        this.demissao = demissao;
+        this.afastDataInicio = afastDataInicio;
+        this.afastDataFim = afastDataFim;
+        this.invisivel = invisivel;
+        this.cpf = cpf;
+        this.pis = pis;
+    }
+
     public Funcionario(Long id, String nFolha, String nome, String nIdentificador, Empresa empresa, Horario horario, Funcao funcao, Departamento departamento, LocalDate admissao, LocalDate demissao, LocalDate afastDataInicio, LocalDate afastDataFim, boolean invisivel, String cpf, String pis) {
         this.id = id;
         this.nFolha = nFolha;
@@ -197,5 +214,26 @@ public class Funcionario {
 
     public void setPis(String pis) {
         this.pis = pis;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "id=" + id +
+                ", nFolha='" + nFolha + '\'' +
+                ", nome='" + nome + '\'' +
+                ", nIdentificador='" + nIdentificador + '\'' +
+                ", empresa=" + empresa +
+                ", horario=" + horario +
+                ", funcao=" + funcao +
+                ", departamento=" + departamento +
+                ", admissao=" + admissao +
+                ", demissao=" + demissao +
+                ", afastDataInicio=" + afastDataInicio +
+                ", afastDataFim=" + afastDataFim +
+                ", invisivel=" + invisivel +
+                ", cpf='" + cpf + '\'' +
+                ", pis='" + pis + '\'' +
+                '}';
     }
 }
