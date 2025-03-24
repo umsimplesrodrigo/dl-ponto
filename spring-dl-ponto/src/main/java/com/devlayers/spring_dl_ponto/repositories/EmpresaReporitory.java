@@ -1,54 +1,60 @@
 package com.devlayers.spring_dl_ponto.repositories;
 
 import com.devlayers.spring_dl_ponto.entities.Empresa;
+import com.devlayers.spring_dl_ponto.repositories.jpa.EmpresaJpa;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class EmpresaReporitory {
-    private List<Empresa> empresas = new ArrayList<>();
+    private final EmpresaJpa empresaJpa;
+
+    @Autowired
+    public EmpresaReporitory(EmpresaJpa empresaJpa) {
+        this.empresaJpa = empresaJpa;
+    }
 
     public Empresa searchById(int id) {
-        Empresa empresa = empresas.stream().filter(p -> p.getId() == id).findFirst().get();
-
-        return empresa;
+        return empresaJpa.findById(id).get();
     }
 
     public List<Empresa> searchEmpresas() {
-        return empresas;
+        return empresaJpa.findAll();
     }
 
     public void addEmpresas(Empresa empresa) {
-        empresas.add(empresa);
+        this.empresaJpa.save(empresa);
     }
 
     public void removeEmpresa(int id) {
-        empresas.removeIf(p -> p.getId() == id);
+        this.empresaJpa.deleteById(id);
     }
 
     public void updateEmpresa(int id, Empresa empresa) {
-        Empresa empresaInMemory = this.searchById(id);
+        Empresa empresaInDb = this.empresaJpa.findById(id).get();
 
-        empresaInMemory.setNome(empresa.getNome());
-        empresaInMemory.setInscricao(empresa.getInscricao());
-        empresaInMemory.setCnpj(empresa.getCnpj());
-        empresaInMemory.setEndereco(empresa.getEndereco());
-        empresaInMemory.setBairro(empresa.getBairro());
-        empresaInMemory.setCidade(empresa.getCidade());
-        empresaInMemory.setCep(empresa.getCep());
-        empresaInMemory.setEstado(empresa.getEstado());
-        empresaInMemory.setCartao_responsavel(empresa.getCartao_responsavel());
-        empresaInMemory.setCartao_cargo(empresa.getCartao_cargo());
-        empresaInMemory.setResponsavel_email(empresa.getResponsavel_email());
-        empresaInMemory.setUsa_cpf(empresa.isUsa_cpf());
-        empresaInMemory.setN_folha(empresa.getN_folha());
-        empresaInMemory.setTelefone(empresa.getTelefone());
-        empresaInMemory.setFeriados(empresa.getFeriados());
+        empresaInDb.setNome(empresa.getNome());
+        empresaInDb.setInscricao(empresa.getInscricao());
+        empresaInDb.setCnpj(empresa.getCnpj());
+        empresaInDb.setEndereco(empresa.getEndereco());
+        empresaInDb.setBairro(empresa.getBairro());
+        empresaInDb.setCidade(empresa.getCidade());
+        empresaInDb.setCep(empresa.getCep());
+        empresaInDb.setEstado(empresa.getEstado());
+        empresaInDb.setCartao_responsavel(empresa.getCartao_responsavel());
+        empresaInDb.setCartao_cargo(empresa.getCartao_cargo());
+        empresaInDb.setResponsavel_email(empresa.getResponsavel_email());
+        empresaInDb.setUsa_cpf(empresa.isUsa_cpf());
+        empresaInDb.setN_folha(empresa.getN_folha());
+        empresaInDb.setTelefone(empresa.getTelefone());
+        empresaInDb.setFeriados(empresa.getFeriados());
+
+        this.empresaJpa.save(empresaInDb);
     }
 
     public boolean isEmpty() {
-        return empresas.isEmpty();
+        return false;
     }
 }
