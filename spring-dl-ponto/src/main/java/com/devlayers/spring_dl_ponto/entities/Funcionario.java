@@ -59,7 +59,7 @@ public class Funcionario {
     @Column(name = "pis")
     private String pis;
 
-    @OneToMany(mappedBy = "batidas", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL)
     private List<Batida> batidas;
 
     public Funcionario() {

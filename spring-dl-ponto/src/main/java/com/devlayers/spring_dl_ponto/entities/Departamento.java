@@ -15,7 +15,7 @@ public class Departamento {
     @Column(name = "descricao")
     private String descricao;
 
-    @OneToMany(mappedBy = "funcionarios", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "departamento", cascade = CascadeType.ALL)
     private List<Funcionario> funcionarios;
 
     public Departamento() {

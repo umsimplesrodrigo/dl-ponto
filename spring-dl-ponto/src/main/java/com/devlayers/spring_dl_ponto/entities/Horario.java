@@ -63,10 +63,10 @@ public class Horario {
     @Column(name = "carga")
     private Long carga;
 
-    @OneToMany(mappedBy = "funcionarios", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "horario", cascade = CascadeType.ALL)
     private List<Funcionario> funcionarios;
 
-    @OneToMany(mappedBy = "batidas", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "horarioNum", cascade = CascadeType.ALL)
     private List<Batida> batidas;
 
     public Horario() {

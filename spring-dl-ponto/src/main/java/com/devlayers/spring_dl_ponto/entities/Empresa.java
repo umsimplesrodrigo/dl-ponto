@@ -58,7 +58,7 @@ public class Empresa {
     @ManyToMany(mappedBy = "empresas")
     private List<Feriado> feriados = new ArrayList<>();
 
-    @OneToMany(mappedBy = "funcionarios", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
     private List<Funcionario> funcionarios;
 
     public Empresa() {

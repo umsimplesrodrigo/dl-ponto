@@ -6,8 +6,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "batidas")
 public class Batida {
-    private Long idFuncionario;
-
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -356,13 +354,5 @@ public class Batida {
 
     public void setBac_saida5(String bac_saida5) {
         this.bacSaida5 = bac_saida5;
-    }
-
-    public Long getIdFuncionario() {
-        return idFuncionario;
-    }
-
-    public void setIdFuncionario(Long idFuncionario) {
-        this.idFuncionario = idFuncionario;
     }
 }
