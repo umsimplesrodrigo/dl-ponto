@@ -1,7 +1,6 @@
 package com.devlayers.spring_dl_ponto.facades;
 
 import com.devlayers.spring_dl_ponto.applications.FuncaoApplication;
-import com.devlayers.spring_dl_ponto.entities.Empresa;
 import com.devlayers.spring_dl_ponto.entities.Funcao;
 import org.springframework.stereotype.Component;
 
@@ -15,27 +14,23 @@ public class FuncaoFacade {
         this.funcaoApplication = funcaoApplication;
     }
 
-    public void cadastrar(Funcao funcao) {
-        this.funcaoApplication.cadastrarFuncao(funcao);
+    public void save(Funcao funcao) {
+        this.funcaoApplication.save(funcao);
     }
 
-    public void atualizar(int id, Funcao funcao) {
-        this.funcaoApplication.atualizar(id, funcao);
+    public void updateFuncao(Long id, Funcao funcao) {
+        this.funcaoApplication.updateFuncao(id, funcao);
     }
 
-    public void deletar(int id) {
-        this.funcaoApplication.deletar(id);
+    public void deleteById(Long id) {
+        this.funcaoApplication.deleteById(id);
     }
 
-    public List<Funcao> search() {
-        return this.funcaoApplication.search();
+    public List<Funcao> findAll() {
+        return this.funcaoApplication.findAll();
     }
 
-    public Funcao searchById(int id) {
-        return this.funcaoApplication.buscarPorId(id);
-    }
-
-    public boolean isEmpty() {
-        return this.funcaoApplication.estaVazio();
+    public Funcao findById(Long id) {
+        return this.funcaoApplication.findById(id);
     }
 }

@@ -58,6 +58,9 @@ public class Empresa {
     @ManyToMany(mappedBy = "empresas")
     private List<Feriado> feriados = new ArrayList<>();
 
+    @OneToMany(mappedBy = "funcionarios", cascade = CascadeType.ALL)
+    private List<Funcionario> funcionarios;
+
     public Empresa() {
     }
 
@@ -206,5 +209,36 @@ public class Empresa {
 
     public void setFeriados(List<Feriado> feriados) {
         this.feriados = feriados;
+    }
+
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", inscricao='" + inscricao + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", cep='" + cep + '\'' +
+                ", estado='" + estado + '\'' +
+                ", cartaoResponsavel='" + cartaoResponsavel + '\'' +
+                ", cartaoCargo='" + cartaoCargo + '\'' +
+                ", responsavelEmail='" + responsavelEmail + '\'' +
+                ", usaCpf=" + usaCpf +
+                ", nFolha='" + nFolha + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", feriados=" + feriados +
+                ", funcionarios=" + funcionarios +
+                '}';
     }
 }

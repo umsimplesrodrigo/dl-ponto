@@ -2,6 +2,8 @@ package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "horarios")
 public class Horario {
@@ -60,6 +62,12 @@ public class Horario {
 
     @Column(name = "carga")
     private Long carga;
+
+    @OneToMany(mappedBy = "funcionarios", cascade = CascadeType.ALL)
+    private List<Funcionario> funcionarios;
+
+    @OneToMany(mappedBy = "batidas", cascade = CascadeType.ALL)
+    private List<Batida> batidas;
 
     public Horario() {
     }
@@ -249,6 +257,22 @@ public class Horario {
         this.carga = carga;
     }
 
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public List<Batida> getBatidas() {
+        return batidas;
+    }
+
+    public void setBatidas(List<Batida> batidas) {
+        this.batidas = batidas;
+    }
+
     @Override
     public String toString() {
         return "Horario{" +
@@ -270,6 +294,8 @@ public class Horario {
                 ", cargaDiaria=" + cargaDiaria +
                 ", neutro=" + neutro +
                 ", carga=" + carga +
+                ", funcionarios=" + funcionarios +
+                ", batidas=" + batidas +
                 '}';
     }
 }

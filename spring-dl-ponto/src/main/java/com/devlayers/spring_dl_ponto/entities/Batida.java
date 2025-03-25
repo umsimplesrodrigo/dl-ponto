@@ -16,8 +16,8 @@ public class Batida {
     @Column(name = "data")
     private LocalDate data;
 
-    @ManyToOne
-    @JoinColumn(name = "id_funcionario")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_funcionario", referencedColumnName = "id")
     private Funcionario funcionario;
 
     @Column(name = "entrada1")
@@ -53,8 +53,8 @@ public class Batida {
     @Column(name = "ajuste")
     private String ajuste;
 
-    @ManyToOne
-    @JoinColumn(name = "horario_num")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "horario_num", referencedColumnName = "id")
     private Horario horarioNum;
 
     @Column(name = "folga")

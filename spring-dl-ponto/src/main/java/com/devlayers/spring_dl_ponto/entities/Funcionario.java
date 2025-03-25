@@ -3,6 +3,7 @@ package com.devlayers.spring_dl_ponto.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "funcionarios")
@@ -21,20 +22,20 @@ public class Funcionario {
     @Column(name = "n_identificador")
     private String nIdentificador;
 
-    @ManyToOne
-    @JoinColumn(name = "id_empresa")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_empresa", referencedColumnName = "id")
     private Empresa empresa;
 
-    @ManyToOne
-    @JoinColumn(name = "id_horario")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_horario", referencedColumnName = "id")
     private Horario horario;
 
-    @ManyToOne
-    @JoinColumn(name = "id_funcao")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_funcao", referencedColumnName = "id")
     private Funcao funcao;
 
-    @ManyToOne
-    @JoinColumn(name = "id_departamento")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_departamento", referencedColumnName = "id")
     private Departamento departamento;
 
     @Column(name = "admissao")
@@ -57,6 +58,9 @@ public class Funcionario {
 
     @Column(name = "pis")
     private String pis;
+
+    @OneToMany(mappedBy = "batidas", cascade = CascadeType.ALL)
+    private List<Batida> batidas;
 
     public Funcionario() {
     }

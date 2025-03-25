@@ -14,6 +14,10 @@ public class BatidaRepository {
         this.batidaJPA = batidaJPA;
     }
 
+    public void save(Batida batida) {
+        this.batidaJPA.save(batida);
+    }
+
     public Batida findById(Long id) {
         return this.batidaJPA.findById(id).orElse(null);
     }
@@ -24,10 +28,6 @@ public class BatidaRepository {
 
     public List<Batida> findAll(){
         return this.batidaJPA.findAll();
-    }
-
-    public void save(Batida batida) {
-        this.batidaJPA.save(batida);
     }
 
     public void deleteById(Long id){
