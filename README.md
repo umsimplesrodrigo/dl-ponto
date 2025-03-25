@@ -10,6 +10,7 @@
 - [📖 Visão Geral](#-visão-geral)
 - [✅ Requisitos Funcionais](#-requisitos-funcionais)
 - [📌 Requisitos Não Funcionais](#-requisitos-não-funcionais)
+- [📌 Tecnologias Utilizadas](#-tecnologias-utilizadas)
 ## 📊 Business Model Canvas
 |Principais Parceiros|Principais Atividades|Proposta de Valor|Relacionamento|Canais|Segmentos de clientes|Estrutura de custos|Fontes de renda|
 |--------------------|---------------------|-----------------|--------------|------|---------------------|-------------------|---------------|
