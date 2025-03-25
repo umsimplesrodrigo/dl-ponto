@@ -1,9 +1,7 @@
 package com.devlayers.spring_dl_ponto.controllers;
 
 import com.devlayers.spring_dl_ponto.entities.Batida;
-import com.devlayers.spring_dl_ponto.entities.Funcionario;
 import com.devlayers.spring_dl_ponto.facades.BatidaFacade;
-import com.devlayers.spring_dl_ponto.repositories.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,32 +19,32 @@ public class BatidaController {
     }
 
     @GetMapping("")
-    public List<Batida> buscarBatidas() {
-        return batidaFacade.buscarBatidas();
+    public List<Batida> findAll() {
+        return batidaFacade.findAll();
     }
 
     @GetMapping("/{id}")
-    public Batida buscarBatidaPorID(@PathVariable Long id) {
-        return batidaFacade.buscarBatidaPorID(id);
+    public Batida findById(@PathVariable Long id) {
+        return batidaFacade.findById(id);
     }
 
     @GetMapping("/{data}")
-    public List<Batida> buscarBatidasPorData(@PathVariable LocalDate data){
-        return batidaFacade.buscarBatidasPorData(data);
+    public List<Batida> findByData(@PathVariable LocalDate data){
+        return batidaFacade.findByData(data);
     }
 
     @PostMapping("")
-    public void incluirBatida(@RequestBody Batida batida) {
-        this.batidaFacade.incluirBatida(batida);
+    public void save(@RequestBody Batida batida) {
+        this.batidaFacade.save(batida);
     }
 
     @PutMapping("/{id}")
-    public void atualizarBatida(@PathVariable Long id, @RequestBody Batida batida) {
-        this.batidaFacade.atualizarBatida(id, batida);
+    public void updateBatida(@PathVariable Long id, @RequestBody Batida batida) {
+        this.batidaFacade.updateBatida(id, batida);
     }
 
     @DeleteMapping("/{id}")
-    public void apagarBatida(@PathVariable Long id) {
-        this.batidaFacade.apagarBatida(id);
+    public void deleteById(@PathVariable Long id) {
+        this.batidaFacade.deleteById(id);
     }
 }

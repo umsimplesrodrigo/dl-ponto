@@ -17,28 +17,28 @@ public class FuncionarioController {
         this.funcionarioFacade = funcionarioFacade;
     }
 
+    @PostMapping("")
+    public void save(@RequestBody Funcionario funcionario) {
+        this.funcionarioFacade.save(funcionario);
+    }
+
     @GetMapping("")
-    public List<Funcionario> buscarFuncionarios() {
-        return funcionarioFacade.buscarFuncionarios();
+    public List<Funcionario> findAll() {
+        return funcionarioFacade.findAll();
     }
 
     @GetMapping("/{id}")
-    public Funcionario buscarFuncionarioPorID(@PathVariable Long id) {
-        return funcionarioFacade.buscarFuncionarioPorID(id);
-    }
-
-    @PostMapping("")
-    public void atualizarFuncionario(@RequestBody Funcionario funcionario) {
-        this.funcionarioFacade.cadastrarFuncionario(funcionario);
+    public Funcionario findById(@PathVariable Long id) {
+        return funcionarioFacade.findById(id);
     }
 
     @PutMapping("/{id}")
-    public void atualizarFuncionario(@PathVariable Long id, @RequestBody Funcionario funcionario) {
-        this.funcionarioFacade.atualizarFuncionario(id, funcionario);
+    public void updateFuncionario(@PathVariable Long id, @RequestBody Funcionario funcionario) {
+        this.funcionarioFacade.updateFuncionario(id, funcionario);
     }
 
     @DeleteMapping("/{id}")
-    public void apagarFuncionario(@PathVariable Long id) {
-        this.funcionarioFacade.apagarFuncionario(id);
+    public void deleteById(@PathVariable Long id) {
+        this.funcionarioFacade.deleteById(id);
     }
 }

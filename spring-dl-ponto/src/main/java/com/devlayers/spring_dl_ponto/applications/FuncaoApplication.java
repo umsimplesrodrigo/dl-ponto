@@ -1,6 +1,5 @@
 package com.devlayers.spring_dl_ponto.applications;
 
-import com.devlayers.spring_dl_ponto.entities.Empresa;
 import com.devlayers.spring_dl_ponto.entities.Funcao;
 import com.devlayers.spring_dl_ponto.repositories.FuncaoRepository;
 import org.springframework.stereotype.Component;
@@ -15,28 +14,24 @@ public class FuncaoApplication {
         this.funcoesRepository = funcoesRepository;
     }
 
-    public void cadastrarFuncao(Funcao funcao) {
-        funcoesRepository.addFuncao(funcao);
+    public void save(Funcao funcao) {
+        funcoesRepository.save(funcao);
     }
 
-    public void atualizar(int id, Funcao funcao) {
+    public void updateFuncao(Long id, Funcao funcao) {
         funcoesRepository.updateFuncao(id, funcao);
     }
 
-    public void deletar(int id) {
-        Funcao funcao = funcoesRepository.buscarPorId(id);
-        funcoesRepository.deletarFuncao(id);
+    public void deleteById(Long id) {
+        Funcao funcao = funcoesRepository.findById(id);
+        funcoesRepository.deleteById(id);
     }
 
-    public List<Funcao> search() {
-        return this.funcoesRepository.buscarFuncoes();
+    public List<Funcao> findAll() {
+        return this.funcoesRepository.findAll();
     }
 
-    public Funcao buscarPorId(int id) {
-        return this.funcoesRepository.buscarPorId(id);
-    }
-
-    public boolean estaVazio() {
-        return this.funcoesRepository.estaVazio();
+    public Funcao findById(Long id) {
+        return this.funcoesRepository.findById(id);
     }
 }

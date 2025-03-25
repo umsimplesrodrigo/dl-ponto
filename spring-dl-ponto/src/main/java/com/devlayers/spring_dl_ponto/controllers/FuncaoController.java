@@ -1,6 +1,5 @@
 package com.devlayers.spring_dl_ponto.controllers;
 
-import com.devlayers.spring_dl_ponto.entities.Empresa;
 import com.devlayers.spring_dl_ponto.entities.Funcao;
 import com.devlayers.spring_dl_ponto.facades.FuncaoFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,27 +19,27 @@ public class FuncaoController {
     }
 
     @GetMapping("")
-    public List<Funcao> get() {
-        return funcaoFacade.search();
+    public List<Funcao> findAll() {
+        return funcaoFacade.findAll();
     }
 
     @GetMapping("/{id}")
-    public Funcao getFuncoes(@PathVariable int id) {
-        return funcaoFacade.searchById(id);
+    public Funcao findById(@PathVariable Long id) {
+        return funcaoFacade.findById(id);
     }
 
     @PostMapping("")
-    public void register(@RequestBody Funcao funcao) {
-        funcaoFacade.cadastrar(funcao);
+    public void save(@RequestBody Funcao funcao) {
+        funcaoFacade.save(funcao);
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable int id, @RequestBody Funcao funcao) {
-        funcaoFacade.atualizar(id, funcao);
+    public void updateFuncao(@PathVariable Long id, @RequestBody Funcao funcao) {
+        funcaoFacade.updateFuncao(id, funcao);
     }
 
     @DeleteMapping("/{id}")
-    public void remove(@PathVariable int id) {
-        funcaoFacade.deletar(id);
+    public void deleteById(@PathVariable Long id) {
+        funcaoFacade.deleteById(id);
     }
 }

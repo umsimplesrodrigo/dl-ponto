@@ -1,46 +1,47 @@
 package com.devlayers.spring_dl_ponto.repositories;
 
 import com.devlayers.spring_dl_ponto.entities.AbonoParcial;
-import com.devlayers.spring_dl_ponto.entities.Funcao;
+import com.devlayers.spring_dl_ponto.repositories.jpa.AbonoParcialJPA;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class AbonoParcialRepository {
-    private List<AbonoParcial> abonosParciais = new ArrayList<>();
+    private final AbonoParcialJPA abonoParcialJPA;
 
-    public AbonoParcial buscarPorId(int id) {
-        AbonoParcial abonoParcial = abonosParciais.stream().filter(p -> p.getId() == id).findFirst().get();
-
-        return abonoParcial;
+    public AbonoParcialRepository(AbonoParcialJPA abonoParcialJPA) {
+        this.abonoParcialJPA = abonoParcialJPA;
     }
 
-    public List<AbonoParcial> buscarAbonosParciais() {
-        return abonosParciais;
+    public AbonoParcial findById(Long id) {
+        return this.abonoParcialJPA.findById(id).orElse(null);
     }
 
-     public void addAbonoParcial(AbonoParcial abonoParcial) {
-        abonosParciais.add(abonoParcial);
+    public List<AbonoParcial> findAll() {
+        return this.abonoParcialJPA.findAll();
+    }
+
+     public void save(AbonoParcial abonoParcial) {
+        this.abonoParcialJPA.save(abonoParcial);
      }
 
-     public void deletarAbonoParcial(int id) {
-        abonosParciais.removeIf(p -> p.getId() == id);
+     public void deleteById(Long id) {
+        this.abonoParcialJPA.deleteById(id);
      }
 
-     public void upadateAbonoParcial(int id, AbonoParcial abonoParcial) {
-         AbonoParcial abonoParcialInMemory = this.buscarPorId(id);
+     public void upadateAbonoParcial(Long id, AbonoParcial abonoParcial) {
+         AbonoParcial abonoParcialInDb = this.abonoParcialJPA.findById(id).orElse(null);
 
-         abonoParcialInMemory.setFuncionario(abonoParcial.getFuncionario());
-         abonoParcialInMemory.setData(abonoParcial.getData());
-         abonoParcialInMemory.setHora_inicio(abonoParcial.getHora_inicio());
-         abonoParcialInMemory.setHora_fim(abonoParcial.getHora_fim());
-         abonoParcialInMemory.setJustificativa(abonoParcial.getJustificativa());
-         abonoParcialInMemory.setTipo(abonoParcial.isTipo());
-     }
+         if (abonoParcialInDb != null) {
+             abonoParcialInDb.setFuncionario(abonoParcial.getFuncionario());
+             abonoParcialInDb.setData(abonoParcial.getData());
+             abonoParcialInDb.setHora_inicio(abonoParcial.getHora_inicio());
+             abonoParcialInDb.setHora_fim(abonoParcial.getHora_fim());
+             abonoParcialInDb.setJustificativa(abonoParcial.getJustificativa());
+             abonoParcialInDb.setTipo(abonoParcial.isTipo());
 
-     public boolean estaVazio() {
-        return abonosParciais.isEmpty();
+             this.abonoParcialJPA.save(abonoParcialInDb);
+         }
      }
 }
