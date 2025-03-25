@@ -16,27 +16,27 @@ public class HorarioController {
     }
 
     @PostMapping("")
-    public void cadastrarHorario(@RequestBody Horario horario) {
-        this.horarioFacade.cadastrarHorario(horario);
+    public void save(@RequestBody Horario horario) {
+        this.horarioFacade.save(horario);
     }
 
     @GetMapping("/{id}")
-    public Horario buscarHorarioPorID(@PathVariable Long id) {
-        return this.horarioFacade.buscarHorarioPorID(id);
+    public Horario findById(@PathVariable Long id) {
+        return this.horarioFacade.findById(id);
     }
 
     @GetMapping("")
-    public List<Horario> buscarHorarios() {
-        return this.horarioFacade.buscarHorarios();
+    public List<Horario> findAll() {
+        return this.horarioFacade.findAll();
     }
 
     @PutMapping("/{id}")
-    public void atualizarHorario(@PathVariable Long id, @RequestBody Horario horario) {
-        this.horarioFacade.atualizarHorario(id, horario);
+    public void updateHorario(@PathVariable Long id, @RequestBody Horario horario) {
+        this.horarioFacade.updateHorario(id, horario);
     }
 
     @DeleteMapping("{id}")
-    public void apagarHorario(@PathVariable Long id) {
-        this.horarioFacade.apagarHorario(id);
+    public void deleteById(@PathVariable Long id) {
+        this.horarioFacade.deleteById(id);
     }
 }

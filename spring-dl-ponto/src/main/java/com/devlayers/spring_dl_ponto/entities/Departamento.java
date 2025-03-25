@@ -2,6 +2,8 @@ package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "departamentos")
 public class Departamento {
@@ -12,6 +14,9 @@ public class Departamento {
 
     @Column(name = "descricao")
     private String descricao;
+
+    @OneToMany(mappedBy = "departamento", cascade = CascadeType.ALL)
+    private List<Funcionario> funcionarios;
 
     public Departamento() {
     }
@@ -35,5 +40,22 @@ public class Departamento {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    @Override
+    public String toString() {
+        return "Departamento{" +
+                "id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", funcionarios=" + funcionarios +
+                '}';
     }
 }

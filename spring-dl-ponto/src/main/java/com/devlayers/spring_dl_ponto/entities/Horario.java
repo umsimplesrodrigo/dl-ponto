@@ -2,6 +2,8 @@ package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "horarios")
 public class Horario {
@@ -61,7 +63,33 @@ public class Horario {
     @Column(name = "carga")
     private Long carga;
 
+    @OneToMany(mappedBy = "horario", cascade = CascadeType.ALL)
+    private List<Funcionario> funcionarios;
+
+    @OneToMany(mappedBy = "horarioNum", cascade = CascadeType.ALL)
+    private List<Batida> batidas;
+
     public Horario() {
+    }
+
+    public Horario(Long diaSemana, String nome, String entrada1, String saida1, String entrada2, String saida2, String entrada3, String saida3, String entrada4, String saida4, String entrada5, String saida5, boolean extra, boolean compensado, boolean cargaDiaria, boolean neutro, Long carga) {
+        this.diaSemana = diaSemana;
+        this.nome = nome;
+        this.entrada1 = entrada1;
+        this.saida1 = saida1;
+        this.entrada2 = entrada2;
+        this.saida2 = saida2;
+        this.entrada3 = entrada3;
+        this.saida3 = saida3;
+        this.entrada4 = entrada4;
+        this.saida4 = saida4;
+        this.entrada5 = entrada5;
+        this.saida5 = saida5;
+        this.extra = extra;
+        this.compensado = compensado;
+        this.cargaDiaria = cargaDiaria;
+        this.neutro = neutro;
+        this.carga = carga;
     }
 
     public Horario(Long id, Long diaSemana, String nome, String entrada1, String saida1, String entrada2, String saida2, String entrada3, String saida3, String entrada4, String saida4, String entrada5, String saida5, boolean extra, boolean compensado, boolean cargaDiaria, boolean neutro, Long carga) {
@@ -227,5 +255,47 @@ public class Horario {
 
     public void setCarga(Long carga) {
         this.carga = carga;
+    }
+
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public List<Batida> getBatidas() {
+        return batidas;
+    }
+
+    public void setBatidas(List<Batida> batidas) {
+        this.batidas = batidas;
+    }
+
+    @Override
+    public String toString() {
+        return "Horario{" +
+                "id=" + id +
+                ", diaSemana=" + diaSemana +
+                ", nome='" + nome + '\'' +
+                ", entrada1='" + entrada1 + '\'' +
+                ", saida1='" + saida1 + '\'' +
+                ", entrada2='" + entrada2 + '\'' +
+                ", saida2='" + saida2 + '\'' +
+                ", entrada3='" + entrada3 + '\'' +
+                ", saida3='" + saida3 + '\'' +
+                ", entrada4='" + entrada4 + '\'' +
+                ", saida4='" + saida4 + '\'' +
+                ", entrada5='" + entrada5 + '\'' +
+                ", saida5='" + saida5 + '\'' +
+                ", extra=" + extra +
+                ", compensado=" + compensado +
+                ", cargaDiaria=" + cargaDiaria +
+                ", neutro=" + neutro +
+                ", carga=" + carga +
+                ", funcionarios=" + funcionarios +
+                ", batidas=" + batidas +
+                '}';
     }
 }
