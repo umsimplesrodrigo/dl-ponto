@@ -13,23 +13,23 @@ public class FuncionarioRepository {
         this.funcionarioJPA = funcionarioJPA;
     }
 
-    public List<Funcionario> buscarFuncionarios() {
+    public List<Funcionario> findAll() {
         return this.funcionarioJPA.findAll();
     }
 
-    public Funcionario buscarFuncionarioPorID(Long id) {
+    public Funcionario findById(Long id) {
         return this.funcionarioJPA.findById(id).orElse(null);
     }
 
-    public void cadastrarFuncionario(Funcionario funcionario) {
+    public void save(Funcionario funcionario) {
         this.funcionarioJPA.save(funcionario);
     }
 
-    public void apagarFuncionario(Long id) {
+    public void deleteById(Long id) {
         this.funcionarioJPA.deleteById(id);
     }
 
-    public void editarFuncionario(Long id, Funcionario funcionario) {
+    public void updateFuncionario(Long id, Funcionario funcionario) {
         Funcionario funcionarioInDb = this.funcionarioJPA.findById(id).orElse(null);
         if (funcionarioInDb != null) {
             funcionarioInDb.setN_folha(funcionario.getN_folha());

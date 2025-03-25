@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -18,25 +17,25 @@ public class BatidaApplication {
         this.batidaRepository = batidaRepository;
     }
 
-    public void incluirBatida(Batida batida) { batidaRepository.addBatida(batida); }
+    public void save(Batida batida) { batidaRepository.save(batida); }
 
-    public void atualizarBatida(Long id, Batida batida) {
-        batidaRepository.atualizarBatida(id, batida);
+    public List<Batida> findAll() {
+        return this.batidaRepository.findAll();
     }
 
-    public void apagarBatida(Long id) {
-        batidaRepository.apagarBatida(id);
+    public Batida findById(Long id) {
+        return this.batidaRepository.findById(id);
     }
 
-    public List<Batida> buscarBatidas() {
-        return this.batidaRepository.buscar();
+    public List<Batida> findByData(LocalDate data) {
+        return this.batidaRepository.findByData(data);
     }
 
-    public Batida buscarBatidaPorID(Long id) {
-        return this.batidaRepository.procurarPorID(id);
+    public void updateBatida(Long id, Batida batida) {
+        batidaRepository.updateBatida(id, batida);
     }
 
-    public List<Batida> buscarBatidaPorData(LocalDate data) {
-        return this.batidaRepository.procurarPorData(data);
+    public void deleteById(Long id) {
+        batidaRepository.deleteById(id);
     }
 }

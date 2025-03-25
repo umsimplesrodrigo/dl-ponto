@@ -13,23 +13,23 @@ public class HorarioRepository {
         this.horarioJPA = horarioJPA;
     }
 
-    public Horario buscarHorarioPorID(Long id) {
+    public Horario findById(Long id) {
         return this.horarioJPA.findById(id).orElse(null);
     }
 
-    public List<Horario> buscarHorarios() {
+    public List<Horario> findAll() {
         return this.horarioJPA.findAll();
     }
 
-    public void cadastrarHorario(Horario horario) {
+    public void save(Horario horario) {
         this.horarioJPA.save(horario);
     }
 
-    public void apagarHorario(Long id) {
+    public void deleteById(Long id) {
         this.horarioJPA.deleteById(id);
     }
 
-    public void editarHorario(Long id, Horario horario) {
+    public void updateHorario(Long id, Horario horario) {
         Horario horarioInDb = this.horarioJPA.findById(id).orElse(null);
         if (horarioInDb != null) {
             horarioInDb.setDia_semana(horario.getDia_semana());

@@ -14,27 +14,27 @@ public class BatidaRepository {
         this.batidaJPA = batidaJPA;
     }
 
-    public Batida procurarPorID(Long id) {
+    public Batida findById(Long id) {
         return this.batidaJPA.findById(id).orElse(null);
     }
 
-    public List<Batida> procurarPorData(LocalDate data) {
+    public List<Batida> findByData(LocalDate data) {
         return this.batidaJPA.findByData(data);
     }
 
-    public List<Batida> buscar(){
+    public List<Batida> findAll(){
         return this.batidaJPA.findAll();
     }
 
-    public void addBatida(Batida batida) {
+    public void save(Batida batida) {
         this.batidaJPA.save(batida);
     }
 
-    public void apagarBatida(Long id){
+    public void deleteById(Long id){
         this.batidaJPA.deleteById(id);
     }
 
-    public void atualizarBatida(Long id, Batida batida) {
+    public void updateBatida(Long id, Batida batida) {
         Batida batidaInDb = this.batidaJPA.findById(id).orElse(null);
 
         if (batidaInDb != null) {
