@@ -1,42 +1,48 @@
 package com.devlayers.spring_dl_ponto.repositories;
 
 import com.devlayers.spring_dl_ponto.entities.Justificativa;
+import com.devlayers.spring_dl_ponto.repositories.jpa.JustificativaJpa;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class JustificativaRepository {
-    public List<Justificativa> justificativas = new ArrayList<>();
+    private final JustificativaJpa justificativaJpa;
+
+    @Autowired
+    public JustificativaRepository(JustificativaJpa justificativaJpa) {
+        this.justificativaJpa = justificativaJpa;
+    }
 
     public Justificativa searchById(int id) {
-        Justificativa justificativa = justificativas.stream().filter(p -> p.getId() == id).findFirst().get();
-
-        return justificativa;
+        return this.justificativaJpa.findById(id).get();
     }
 
     public List<Justificativa> searchJustificativas() {
-        return justificativas;
+        return this.justificativaJpa.findAll();
     }
 
     public void addJustificativas(Justificativa justificativa) {
-        justificativas.add(justificativa);
+        this.justificativaJpa.save(justificativa);
     }
 
     public void removeJustificativas(int id) {
-        justificativas.removeIf(p -> p.getId() == id);
+        this.justificativaJpa.deleteById(id);
     }
 
     public void updateJustificativas(int id, Justificativa justificativa) {
-        Justificativa justificativaInMemory = this.searchById(id);
+        Justificativa justificativaInDb = this.justificativaJpa.findById(id).get();
 
-        justificativaInMemory.setNome(justificativa.getNome());
-        justificativaInMemory.setDescricao(justificativa.getDescricao());
-        justificativaInMemory.setLancar_falta(justificativa.isLancar_falta());
+        justificativaInDb.setNome(justificativa.getNome());
+        justificativaInDb.setDescricao(justificativa.getDescricao());
+        justificativaInDb.setLancar_falta(justificativa.isLancar_falta());
+
+        this.justificativaJpa.save(justificativaInDb);
     }
 
     public boolean isEmpty() {
-        return justificativas.isEmpty();
+        return false;
     }
 }
