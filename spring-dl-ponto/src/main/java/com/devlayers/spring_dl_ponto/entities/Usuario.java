@@ -33,6 +33,20 @@ public class Usuario {
     @Column(name = "ultimo_login")
     private LocalDateTime ultimoLogin;
 
+    public Usuario() {
+    }
+
+    public Usuario(Long id, String nome, boolean administrador, String senha, boolean bloqueado, boolean desativado, String email, LocalDateTime ultimoLogin) {
+        this.id = id;
+        this.nome = nome;
+        this.administrador = administrador;
+        this.senha = senha;
+        this.bloqueado = bloqueado;
+        this.desativado = desativado;
+        this.email = email;
+        this.ultimoLogin = ultimoLogin;
+    }
+
     public Long getId() {
         return id;
     }

@@ -1,9 +1,9 @@
 package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Entity
 @Table(name = "empresas")
@@ -37,7 +37,7 @@ public class Empresa {
     @Column(name = "estado")
     private String estado;
 
-    @Column(name = "cartao_Responsavel")
+    @Column(name = "cartao_responsavel")
     private String cartaoResponsavel;
 
     @Column(name = "cartao_cargo")
@@ -45,16 +45,43 @@ public class Empresa {
 
     @Column(name = "responsavel_email")
     private String responsavelEmail;
-    private boolean usa_cpf;
 
-    @Column(name = "nFolha")
-    private String n_folha;
+    @Column(name = "usa_cpf")
+    private boolean usaCpf;
+
+    @Column(name = "n_folha")
+    private String nFolha;
 
     @Column(name = "telefone")
     private String telefone;
 
     @ManyToMany(mappedBy = "empresas")
     private List<Feriado> feriados = new ArrayList<>();
+
+    @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
+    private List<Funcionario> funcionarios;
+
+    public Empresa() {
+    }
+
+    public Empresa(Long id, String nome, String inscricao, String cnpj, String endereco, String bairro, String cidade, String cep, String estado, String cartaoResponsavel, String cartaoCargo, String responsavelEmail, boolean usaCpf, String nFolha, String telefone, List<Feriado> feriados) {
+        this.id = id;
+        this.nome = nome;
+        this.inscricao = inscricao;
+        this.cnpj = cnpj;
+        this.endereco = endereco;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.cep = cep;
+        this.estado = estado;
+        this.cartaoResponsavel = cartaoResponsavel;
+        this.cartaoCargo = cartaoCargo;
+        this.responsavelEmail = responsavelEmail;
+        this.usaCpf = usaCpf;
+        this.nFolha = nFolha;
+        this.telefone = telefone;
+        this.feriados = feriados;
+    }
 
     public Long getId() {
         return id;
@@ -153,19 +180,19 @@ public class Empresa {
     }
 
     public boolean isUsa_cpf() {
-        return usa_cpf;
+        return usaCpf;
     }
 
     public void setUsa_cpf(boolean usa_cpf) {
-        this.usa_cpf = usa_cpf;
+        this.usaCpf = usa_cpf;
     }
 
     public String getN_folha() {
-        return n_folha;
+        return nFolha;
     }
 
     public void setN_folha(String n_folha) {
-        this.n_folha = n_folha;
+        this.nFolha = n_folha;
     }
 
     public String getTelefone() {
@@ -174,5 +201,44 @@ public class Empresa {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public List<Feriado> getFeriados() {
+        return feriados;
+    }
+
+    public void setFeriados(List<Feriado> feriados) {
+        this.feriados = feriados;
+    }
+
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", inscricao='" + inscricao + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", cep='" + cep + '\'' +
+                ", estado='" + estado + '\'' +
+                ", cartaoResponsavel='" + cartaoResponsavel + '\'' +
+                ", cartaoCargo='" + cartaoCargo + '\'' +
+                ", responsavelEmail='" + responsavelEmail + '\'' +
+                ", usaCpf=" + usaCpf +
+                ", nFolha='" + nFolha + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", feriados=" + feriados +
+                ", funcionarios=" + funcionarios +
+                '}';
     }
 }

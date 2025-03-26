@@ -17,27 +17,27 @@ public class BatidaFacade {
         this.batidaApplication = batidaApplication;
     }
 
-    public void incluirBatida(Batida batida) {
-        this.batidaApplication.incluirBatida(batida);
+    public void save(Batida batida) {
+        this.batidaApplication.save(batida);
     }
 
-    public void atualizarBatida(Long id, Batida batida) {
-        this.batidaApplication.atualizarBatida(id, batida);
+    public List<Batida> findAll() {
+        return batidaApplication.findAll();
     }
 
-    public void apagarBatida(Long id) {
-        this.batidaApplication.apagarBatida(id);
+    public Batida findById(Long id) {
+        return batidaApplication.findById(id);
     }
 
-    public List<Batida> buscarBatidas() {
-        return batidaApplication.buscarBatidas();
+    public List<Batida> findByData(LocalDate data) {
+        return batidaApplication.findByData(data);
     }
 
-    public Batida buscarBatidaPorID(Long id) {
-        return batidaApplication.buscarBatidaPorID(id);
+    public void updateBatida(Long id, Batida batida) {
+        this.batidaApplication.updateBatida(id, batida);
     }
 
-    public List<Batida> buscarBatidasPorData(LocalDate data) {
-        return batidaApplication.buscarBatidaPorData(data);
+    public void deleteById(Long id) {
+        this.batidaApplication.deleteById(id);
     }
 }

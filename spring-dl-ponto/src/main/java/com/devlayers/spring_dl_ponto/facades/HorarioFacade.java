@@ -16,23 +16,23 @@ public class HorarioFacade {
         this.horarioApplication = horarioApplication;
     }
 
-    public void cadastrarHorario(Horario horario) {
-        this.horarioApplication.cadastrarHorario(horario);
+    public void save(Horario horario) {
+        this.horarioApplication.save(horario);
     }
 
-    public Horario buscarHorarioPorID(Long id) {
-        return this.horarioApplication.buscarHorarioPorID(id);
+    public Horario findById(Long id) {
+        return this.horarioApplication.findById(id);
     }
 
-    public List<Horario> buscarHorarios() {
-        return this.horarioApplication.buscarHorarios();
+    public List<Horario> findAll() {
+        return this.horarioApplication.findAll();
     }
 
-    public void atualizarHorario(Long id, Horario horario) {
-        this.horarioApplication.atualizarHorario(id, horario);
+    public void updateHorario(Long id, Horario horario) {
+        this.horarioApplication.updateHorario(id, horario);
     }
 
-    public void apagarHorario(Long id) {
-        this.horarioApplication.apagarHorario(id);
+    public void deleteById(Long id) {
+        this.horarioApplication.deleteById(id);
     }
 }

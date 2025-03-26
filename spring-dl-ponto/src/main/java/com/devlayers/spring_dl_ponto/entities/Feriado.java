@@ -1,32 +1,42 @@
 package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "feriado")
+@Table(name = "feriados")
 public class Feriado {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "descricao")
+    @Column(name = "descricao", nullable = false, length = 100)
     private String descricao;
 
-    @Column(name = "data")
+    @Column(name = "data", nullable = false)
     private LocalDate data;
 
     @ManyToMany
     @JoinTable(
-            name = "feriados_empresas",
-            joinColumns = @JoinColumn(name = "feriado_id"),
-            inverseJoinColumns = @JoinColumn(name = "empresa_id")
+            name = "empresa_feriado",
+            joinColumns = @JoinColumn(name = "id_feriado"),
+            inverseJoinColumns = @JoinColumn(name = "id_empresa")
     )
+
     private List<Empresa> empresas = new ArrayList<>();
+
+    public Feriado() {}
+
+    public Feriado(Long id, String descricao, LocalDate data, List<Empresa> empresas) {
+        this.id = id;
+        this.descricao = descricao;
+        this.data = data;
+        this.empresas = empresas;
+    }
 
     public Long getId() {
         return id;
@@ -50,5 +60,13 @@ public class Feriado {
 
     public void setData(LocalDate data) {
         this.data = data;
+    }
+
+    public List<Empresa> getEmpresas() {
+        return empresas;
+    }
+
+    public void setEmpresas(List<Empresa> empresas) {
+        this.empresas = empresas;
     }
 }
