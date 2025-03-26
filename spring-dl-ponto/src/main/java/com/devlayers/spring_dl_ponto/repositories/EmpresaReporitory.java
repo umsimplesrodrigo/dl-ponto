@@ -49,7 +49,6 @@ public class EmpresaReporitory {
         empresaInDb.setUsa_cpf(empresa.isUsa_cpf());
         empresaInDb.setN_folha(empresa.getN_folha());
         empresaInDb.setTelefone(empresa.getTelefone());
-        empresaInDb.setFeriados(empresa.getFeriados());
 
         this.empresaJpa.save(empresaInDb);
     }

@@ -20,14 +20,8 @@ public class Feriado {
     @Column(name = "data", nullable = false)
     private LocalDate data;
 
-    @ManyToMany
-    @JoinTable(
-            name = "empresa_feriado",
-            joinColumns = @JoinColumn(name = "id_feriado"),
-            inverseJoinColumns = @JoinColumn(name = "id_empresa")
-    )
-
-    private List<Empresa> empresas = new ArrayList<>();
+    @OneToMany(mappedBy = "feriado", cascade = CascadeType.ALL)
+    private List<FeriadoEmpresa> feriadoEmpresas;
 
     public Feriado() {}
 
@@ -35,7 +29,6 @@ public class Feriado {
         this.id = id;
         this.descricao = descricao;
         this.data = data;
-        this.empresas = empresas;
     }
 
     public Long getId() {
@@ -62,11 +55,21 @@ public class Feriado {
         this.data = data;
     }
 
-    public List<Empresa> getEmpresas() {
-        return empresas;
+    public List<FeriadoEmpresa> getFeriadoEmpresas() {
+        return feriadoEmpresas;
     }
 
-    public void setEmpresas(List<Empresa> empresas) {
-        this.empresas = empresas;
+    public void setFeriadoEmpresas(List<FeriadoEmpresa> feriadoEmpresas) {
+        this.feriadoEmpresas = feriadoEmpresas;
+    }
+
+    @Override
+    public String toString() {
+        return "Feriado{" +
+                "id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", data=" + data +
+                ", feriadoEmpresas=" + feriadoEmpresas +
+                '}';
     }
 }

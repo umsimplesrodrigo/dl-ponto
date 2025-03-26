@@ -12,8 +12,8 @@ public class Afastamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_funcionario", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_funcionario", referencedColumnName = "id")
     private Funcionario funcionario;
 
     @Column(name = "data_inicio", nullable = false)
@@ -22,8 +22,8 @@ public class Afastamento {
     @Column(name = "data_fim")
     private LocalDate dataFim;
 
-    @ManyToOne
-    @JoinColumn(name = "id_justificativa", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_justificativa", referencedColumnName = "id")
     private Justificativa justificativa;
 
     @Column(name = "observacao", length = 255)
@@ -85,5 +85,17 @@ public class Afastamento {
 
     public void setObs(String obs) {
         this.obs = obs;
+    }
+
+    @Override
+    public String toString() {
+        return "Afastamento{" +
+                "id=" + id +
+                ", funcionario=" + funcionario +
+                ", dataInicio=" + dataInicio +
+                ", dataFim=" + dataFim +
+                ", justificativa=" + justificativa +
+                ", obs='" + obs + '\'' +
+                '}';
     }
 }

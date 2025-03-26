@@ -12,8 +12,8 @@ public class AbonoParcial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_funcionario")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_funcionario", referencedColumnName = "id")
     private Funcionario funcionario;
 
     @Column(name = "data")
@@ -25,14 +25,23 @@ public class AbonoParcial {
     @Column(name = "hora_fim")
     private String horaFim;
 
-    @ManyToOne
-    @JoinColumn(name = "id_justificativa")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_justificativa", referencedColumnName = "id")
     private Justificativa justificativa;
 
     @Column(name = "tipo")
     private boolean tipo;
 
     public AbonoParcial() {
+    }
+
+    public AbonoParcial(Funcionario funcionario, LocalDate data, String horaInicio, String horaFim, Justificativa justificativa, boolean tipo) {
+        this.funcionario = funcionario;
+        this.data = data;
+        this.horaInicio = horaInicio;
+        this.horaFim = horaFim;
+        this.justificativa = justificativa;
+        this.tipo = tipo;
     }
 
     public AbonoParcial(Long id, Funcionario funcionario, LocalDate data, String horaInicio, String horaFim, Justificativa justificativa, boolean tipo) {
@@ -99,5 +108,18 @@ public class AbonoParcial {
 
     public void setTipo(boolean tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "AbonoParcial{" +
+                "id=" + id +
+                ", funcionario=" + funcionario +
+                ", data=" + data +
+                ", horaInicio='" + horaInicio + '\'' +
+                ", horaFim='" + horaFim + '\'' +
+                ", justificativa=" + justificativa +
+                ", tipo=" + tipo +
+                '}';
     }
 }

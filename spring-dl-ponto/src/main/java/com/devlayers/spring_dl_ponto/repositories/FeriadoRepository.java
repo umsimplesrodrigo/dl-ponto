@@ -31,7 +31,6 @@ public class FeriadoRepository {
         if (feriadoInDb != null) {
             feriadoInDb.setDescricao(feriado.getDescricao());
             feriadoInDb.setData(feriado.getData());
-            feriadoInDb.setEmpresas(feriado.getEmpresas());
 
             this.feriadoJPA.save(feriadoInDb);
         }

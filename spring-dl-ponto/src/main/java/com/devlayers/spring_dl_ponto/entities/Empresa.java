@@ -1,9 +1,7 @@
 package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
-
 
 @Entity
 @Table(name = "empresas")
@@ -55,11 +53,11 @@ public class Empresa {
     @Column(name = "telefone")
     private String telefone;
 
-    @ManyToMany(mappedBy = "empresas")
-    private List<Feriado> feriados = new ArrayList<>();
-
     @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
     private List<Funcionario> funcionarios;
+
+    @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
+    private List<FeriadoEmpresa> feriadoEmpresas;
 
     public Empresa() {
     }
@@ -79,7 +77,6 @@ public class Empresa {
         this.usaCpf = usaCpf;
         this.nFolha = nFolha;
         this.telefone = telefone;
-        this.feriados = feriados;
     }
 
     public Empresa(Long id, String nome, String inscricao, String cnpj, String endereco, String bairro, String cidade, String cep, String estado, String cartaoResponsavel, String cartaoCargo, String responsavelEmail, boolean usaCpf, String nFolha, String telefone, List<Feriado> feriados) {
@@ -98,7 +95,6 @@ public class Empresa {
         this.usaCpf = usaCpf;
         this.nFolha = nFolha;
         this.telefone = telefone;
-        this.feriados = feriados;
     }
 
     public Long getId() {
@@ -221,20 +217,20 @@ public class Empresa {
         this.telefone = telefone;
     }
 
-    public List<Feriado> getFeriados() {
-        return feriados;
-    }
-
-    public void setFeriados(List<Feriado> feriados) {
-        this.feriados = feriados;
-    }
-
     public List<Funcionario> getFuncionarios() {
         return funcionarios;
     }
 
     public void setFuncionarios(List<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
+    }
+
+    public List<FeriadoEmpresa> getFeriadoEmpresas() {
+        return feriadoEmpresas;
+    }
+
+    public void setFeriadoEmpresas(List<FeriadoEmpresa> feriadoEmpresas) {
+        this.feriadoEmpresas = feriadoEmpresas;
     }
 
     @Override
@@ -255,8 +251,8 @@ public class Empresa {
                 ", usaCpf=" + usaCpf +
                 ", nFolha='" + nFolha + '\'' +
                 ", telefone='" + telefone + '\'' +
-                ", feriados=" + feriados +
                 ", funcionarios=" + funcionarios +
+                ", feriadoEmpresas=" + feriadoEmpresas +
                 '}';
     }
 }

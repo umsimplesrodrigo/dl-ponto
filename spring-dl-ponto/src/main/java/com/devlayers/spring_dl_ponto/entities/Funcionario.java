@@ -1,7 +1,6 @@
 package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -61,6 +60,12 @@ public class Funcionario {
 
     @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL)
     private List<Batida> batidas;
+
+    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL)
+    private List<Afastamento> afastamentos;
+
+    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL)
+    private List<AbonoParcial> abonosParciais;
 
     public Funcionario() {
     }
@@ -220,6 +225,30 @@ public class Funcionario {
         this.pis = pis;
     }
 
+    public List<Batida> getBatidas() {
+        return batidas;
+    }
+
+    public void setBatidas(List<Batida> batidas) {
+        this.batidas = batidas;
+    }
+
+    public List<Afastamento> getAfastamentos() {
+        return afastamentos;
+    }
+
+    public void setAfastamentos(List<Afastamento> afastamentos) {
+        this.afastamentos = afastamentos;
+    }
+
+    public List<AbonoParcial> getAbonosParciais() {
+        return abonosParciais;
+    }
+
+    public void setAbonosParciais(List<AbonoParcial> abonosParciais) {
+        this.abonosParciais = abonosParciais;
+    }
+
     @Override
     public String toString() {
         return "Funcionario{" +
@@ -238,6 +267,9 @@ public class Funcionario {
                 ", invisivel=" + invisivel +
                 ", cpf='" + cpf + '\'' +
                 ", pis='" + pis + '\'' +
+                ", batidas=" + batidas +
+                ", afastamentos=" + afastamentos +
+                ", abonosParciais=" + abonosParciais +
                 '}';
     }
 }

@@ -1,6 +1,7 @@
 package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "justificativas")
@@ -18,6 +19,12 @@ public class Justificativa {
 
     @Column(name = "lancar_falta")
     private boolean lancarFalta;
+
+    @OneToMany(mappedBy = "justificativa", cascade = CascadeType.ALL)
+    private List<Afastamento> afastamentos;
+
+    @OneToMany(mappedBy = "justificativa", cascade = CascadeType.ALL)
+    private List<AbonoParcial> abonosParciais;
 
     public Justificativa() {
     }
@@ -65,5 +72,33 @@ public class Justificativa {
 
     public void setLancar_falta(boolean lancar_falta) {
         this.lancarFalta = lancar_falta;
+    }
+
+    public List<Afastamento> getAfastamentos() {
+        return afastamentos;
+    }
+
+    public void setAfastamentos(List<Afastamento> afastamentos) {
+        this.afastamentos = afastamentos;
+    }
+
+    public List<AbonoParcial> getAbonosParciais() {
+        return abonosParciais;
+    }
+
+    public void setAbonosParciais(List<AbonoParcial> abonosParciais) {
+        this.abonosParciais = abonosParciais;
+    }
+
+    @Override
+    public String toString() {
+        return "Justificativa{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", lancarFalta=" + lancarFalta +
+                ", afastamentos=" + afastamentos +
+                ", abonosParciais=" + abonosParciais +
+                '}';
     }
 }
