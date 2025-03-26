@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Afastamento;
 import com.devlayers.spring_dl_ponto.repositories.AfastamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -16,23 +15,23 @@ public class AfastamentoApplication {
         this.afastamentoRepository = afastamentoRepository;
     }
 
-    public void cadastrarAfastamento(Afastamento afastamento) {
-        this.afastamentoRepository.cadastrarAfastamento(afastamento);
+    public void save(Afastamento afastamento) {
+        this.afastamentoRepository.save(afastamento);
     }
 
-    public Afastamento buscarAfastamentoPorID(Long id) {
-        return this.afastamentoRepository.buscarAfastamentoPorID(id);
+    public Afastamento findById(Long id) {
+        return this.afastamentoRepository.findById(id);
     }
 
-    public List<Afastamento> buscarAfastamentos() {
-        return this.afastamentoRepository.buscarAfastamentos();
+    public List<Afastamento> findAll() {
+        return this.afastamentoRepository.findAll();
     }
 
-    public void atualizarAfastamento(Long id, Afastamento afastamento) {
-        this.afastamentoRepository.atualizarAfastamento(id, afastamento);
+    public void update(Long id, Afastamento afastamento) {
+        this.afastamentoRepository.update(id, afastamento);
     }
 
-    public void apagarAfastamento(Long id) {
-        this.afastamentoRepository.apagarAfastamento(id);
+    public void deleteById(Long id) {
+        this.afastamentoRepository.deleteById(id);
     }
 }

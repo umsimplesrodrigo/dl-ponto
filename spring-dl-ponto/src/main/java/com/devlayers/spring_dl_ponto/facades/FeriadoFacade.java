@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.applications.FeriadoApplication;
 import com.devlayers.spring_dl_ponto.entities.Feriado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -16,23 +15,23 @@ public class FeriadoFacade {
         this.feriadoApplication = feriadoApplication;
     }
 
-    public void cadastrarFeriado(Feriado feriado) {
-        this.feriadoApplication.cadastrarFeriado(feriado);
+    public void save(Feriado feriado) {
+        this.feriadoApplication.save(feriado);
     }
 
-    public Feriado buscarFeriadoPorID(Long id) {
-        return this.feriadoApplication.buscarFeriadoPorID(id);
+    public Feriado findById(Long id) {
+        return this.feriadoApplication.findById(id);
     }
 
-    public List<Feriado> buscarFeriados() {
-        return this.feriadoApplication.buscarFeriados();
+    public List<Feriado> findAll() {
+        return this.feriadoApplication.findAll();
     }
 
-    public void atualizarFeriado(Long id, Feriado feriado) {
-        this.feriadoApplication.atualizarFeriado(id, feriado);
+    public void update(Long id, Feriado feriado) {
+        this.feriadoApplication.update(id, feriado);
     }
 
-    public void apagarFeriado(Long id) {
-        this.feriadoApplication.apagarFeriado(id);
+    public void deleteById(Long id) {
+        this.feriadoApplication.deleteById(id);
     }
 }

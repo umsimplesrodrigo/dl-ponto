@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Batida;
 import com.devlayers.spring_dl_ponto.facades.BatidaFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDate;
 import java.util.List;
 

@@ -1,38 +1,39 @@
 package com.devlayers.spring_dl_ponto.repositories;
 
 import com.devlayers.spring_dl_ponto.entities.Departamento;
+import com.devlayers.spring_dl_ponto.repositories.jpa.DepartamentoJPA;
 import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class DepartamentoRepository {
-    private List<Departamento> departamentos = new ArrayList<>();
+    private final DepartamentoJPA departamentoJPA;
 
-    public void cadastrarDepartamento(Departamento departamento) {
-        this.departamentos.add(departamento);
+    public DepartamentoRepository(DepartamentoJPA departamentoJPA) {
+        this.departamentoJPA = departamentoJPA;
     }
 
-    public Departamento buscarDepartamentoPorID(Long id) {
-        return this.departamentos
-                .stream()
-                .filter(d -> d.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+    public void save(Departamento departamento) {
+        this.departamentoJPA.save(departamento);
     }
 
-    public List<Departamento> buscarDepartamentos() {
-        return this.departamentos;
+    public Departamento findById(Long id) {
+        return this.departamentoJPA.findById(id).orElse(null);
     }
 
-    public void atualizarDepartamento(Long id, Departamento departamento) {
-        Departamento departamentoInMemory = this.buscarDepartamentoPorID(id);
-
-        departamentoInMemory.setDescricao(departamento.getDescricao());
+    public List<Departamento> findAll() {
+        return this.departamentoJPA.findAll();
     }
 
-    public void apagarDepartamento(Long id) {
-        this.departamentos.removeIf(d -> d.getId().equals(id));
+    public void update(Long id, Departamento departamento) {
+        Departamento departamentoInDb = this.departamentoJPA.findById(id).orElse(null);
+
+        if (departamentoInDb != null) {
+            departamentoInDb.setDescricao(departamento.getDescricao());
+        }
+    }
+
+    public void deleteById(Long id) {
+        this.departamentoJPA.deleteById(id);
     }
 }

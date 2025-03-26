@@ -1,12 +1,9 @@
 package com.devlayers.spring_dl_ponto.controllers;
 
 import com.devlayers.spring_dl_ponto.entities.Departamento;
-import com.devlayers.spring_dl_ponto.entities.Justificativa;
 import com.devlayers.spring_dl_ponto.facades.DepartamentoFacade;
-import com.devlayers.spring_dl_ponto.facades.JustificativaFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -20,27 +17,27 @@ public class DepartamentoController {
     }
 
     @PostMapping("")
-    public void cadastrarDepartamentos(@RequestBody Departamento departamento) {
-        this.departamentoFacade.cadastrarDepartamento(departamento);
+    public void save(@RequestBody Departamento departamento) {
+        this.departamentoFacade.save(departamento);
     }
 
     @GetMapping("/{id}")
-    public Departamento buscarDepartamentoPorID(@PathVariable Long id) {
-        return this.departamentoFacade.buscarDepartamentoPorID(id);
+    public Departamento findById(@PathVariable Long id) {
+        return this.departamentoFacade.findById(id);
     }
 
     @GetMapping("")
-    public List<Departamento> buscarDepartamentos() {
-        return this.departamentoFacade.buscarDepartamentos();
+    public List<Departamento> findAll() {
+        return this.departamentoFacade.findAll();
     }
 
     @PutMapping("/{id}")
-    public void atualizarDepartamento(@PathVariable Long id, @RequestBody Departamento departamento) {
-        this.departamentoFacade.atualizarDepartamento(id, departamento);
+    public void update(@PathVariable Long id, @RequestBody Departamento departamento) {
+        this.departamentoFacade.update(id, departamento);
     }
 
     @DeleteMapping("/{id}")
-    public void apagarDepartamento(@PathVariable Long id) {
-        this.departamentoFacade.apagarDepartamento(id);
+    public void deleteById(@PathVariable Long id) {
+        this.departamentoFacade.deleteById(id);
     }
 }

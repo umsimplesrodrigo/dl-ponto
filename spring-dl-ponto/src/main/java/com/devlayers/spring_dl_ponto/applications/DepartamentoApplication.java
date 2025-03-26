@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Departamento;
 import com.devlayers.spring_dl_ponto.repositories.DepartamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -16,27 +15,23 @@ public class DepartamentoApplication {
         this.departamentoRepository = departaamentoRepository;
     }
 
-    public void cadastrarDepartamento(Departamento departamento) {
-        departamentoRepository.cadastrarDepartamento(departamento);
+    public void save(Departamento departamento) {
+        departamentoRepository.save(departamento);
     }
 
-    public void atualizarDepartamento(Long id, Departamento departamento) {
-        departamentoRepository.atualizarDepartamento(id, departamento);
+    public List<Departamento> findAll() {
+        return departamentoRepository.findAll();
     }
 
-    public void apagarDepartamento(Long id) {
-        departamentoRepository.apagarDepartamento(id);
+    public Departamento findById(Long id) {
+        return departamentoRepository.findById(id);
     }
 
-    public List<Departamento> buscarDepartamentos() {
-        return departamentoRepository.buscarDepartamentos();
+    public void update(Long id, Departamento departamento) {
+        departamentoRepository.update(id, departamento);
     }
 
-    public Departamento buscarDepartamentoPorID(Long id) {
-        return departamentoRepository.buscarDepartamentoPorID(id);
+    public void deleteById(Long id) {
+        departamentoRepository.deleteById(id);
     }
-
-    /*public boolean isEmpty() {
-        return departamentoRepository.isEmpty();
-    }*/
 }

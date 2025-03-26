@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Funcionario;
 import com.devlayers.spring_dl_ponto.repositories.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component

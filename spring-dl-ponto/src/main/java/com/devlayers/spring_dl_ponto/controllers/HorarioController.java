@@ -3,7 +3,6 @@ package com.devlayers.spring_dl_ponto.controllers;
 import com.devlayers.spring_dl_ponto.entities.Horario;
 import com.devlayers.spring_dl_ponto.facades.HorarioFacade;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Funcao;
 import com.devlayers.spring_dl_ponto.facades.FuncaoFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

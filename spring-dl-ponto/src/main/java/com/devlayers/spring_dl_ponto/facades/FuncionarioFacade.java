@@ -3,7 +3,6 @@ package com.devlayers.spring_dl_ponto.facades;
 import com.devlayers.spring_dl_ponto.applications.FuncionarioApplication;
 import com.devlayers.spring_dl_ponto.entities.Funcionario;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component

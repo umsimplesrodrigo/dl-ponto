@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.applications.UsuarioApplication;
 import com.devlayers.spring_dl_ponto.entities.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -16,27 +15,23 @@ public class UsuarioFacade {
         this.usuarioApplication = usuarioApplication;
     }
 
-    public void cadastrarUsuario(Usuario usuario) {
-        this.usuarioApplication.cadastrarUsuario(usuario);
+    public void save(Usuario usuario) {
+        this.usuarioApplication.save(usuario);
     }
 
-    public void atualizarUsuario(Long id, Usuario usuario) {
-        this.usuarioApplication.atualizarUsuario(id, usuario);
+    public List<Usuario> findAll() {
+        return this.usuarioApplication.findAll();
     }
 
-    public void apagarUsuario(Long id) {
-        this.usuarioApplication.apagarUsuario(id);
+    public Usuario findById(Long id) {
+        return this.usuarioApplication.findById(id);
     }
 
-    public List<Usuario> buscarUsuarios() {
-        return this.usuarioApplication.buscarUsuarios();
+    public void update(Long id, Usuario usuario) {
+        this.usuarioApplication.update(id, usuario);
     }
 
-    public Usuario buscarUsuariosPorID(Long id) {
-        return this.usuarioApplication.buscarUsuarioPorID(id);
+    public void deleteById(Long id) {
+        this.usuarioApplication.deleteById(id);
     }
-
-    /*public boolean isEmpty() {
-        return this.usuarioApplication.isEmpty();
-    }*/
 }

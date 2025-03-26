@@ -3,7 +3,6 @@ package com.devlayers.spring_dl_ponto.repositories;
 import com.devlayers.spring_dl_ponto.entities.Funcao;
 import com.devlayers.spring_dl_ponto.repositories.jpa.FuncaoJPA;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository

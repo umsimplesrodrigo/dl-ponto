@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Justificativa;
 import com.devlayers.spring_dl_ponto.repositories.jpa.JustificativaJpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository

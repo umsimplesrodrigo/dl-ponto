@@ -1,45 +1,48 @@
 package com.devlayers.spring_dl_ponto.repositories;
 
 import com.devlayers.spring_dl_ponto.entities.Usuario;
+import com.devlayers.spring_dl_ponto.repositories.jpa.UsuarioJPA;
 import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class UsuarioRepository {
-    private List<Usuario> usuarios = new ArrayList<>();
+    private final UsuarioJPA usuarioJPA;
 
-    public void cadastrarUsuario(Usuario usuario) {
-        this.usuarios.add(usuario);
+    public UsuarioRepository(UsuarioJPA usuarioJPA) {
+        this.usuarioJPA = usuarioJPA;
     }
 
-    public Usuario buscarUsuarioPorID(Long id) {
-        return this.usuarios
-                .stream()
-                .filter(u -> u.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+    public void save(Usuario usuario) {
+        this.usuarioJPA.save(usuario);
     }
 
-    public List<Usuario> buscarUsuarios() {
-        return this.usuarios;
+    public Usuario findById(Long id) {
+        return this.usuarioJPA.findById(id).orElse(null);
     }
 
-    public void atualizarUsuario(Long id, Usuario usuario) {
-        Usuario usuarioInMemory = this.buscarUsuarioPorID(id);
-
-        usuarioInMemory.setNome(usuario.getNome());
-        usuarioInMemory.setAdministrador(usuario.isAdministrador());
-        usuarioInMemory.setSenha(usuario.getSenha());
-        usuarioInMemory.setSenha(usuario.getSenha());
-        usuarioInMemory.setBloqueado(usuario.isBloqueado());
-        usuarioInMemory.setDesativado(usuario.isDesativado());
-        usuarioInMemory.setEmail(usuario.getEmail());
-        usuarioInMemory.setUltimo_login(usuario.getUltimo_login());
+    public List<Usuario> findAll() {
+        return this.usuarioJPA.findAll();
     }
 
-    public void apagarUsuario(Long id) {
-        this.usuarios.removeIf(u -> u.getId().equals(id));
+    public void update(Long id, Usuario usuario) {
+        Usuario usuarioInDB = this.usuarioJPA.findById(id).orElse(null);
+
+        if (usuarioInDB != null) {
+            usuarioInDB.setNome(usuario.getNome());
+            usuarioInDB.setAdministrador(usuario.isAdministrador());
+            usuarioInDB.setSenha(usuario.getSenha());
+            usuarioInDB.setSenha(usuario.getSenha());
+            usuarioInDB.setBloqueado(usuario.isBloqueado());
+            usuarioInDB.setDesativado(usuario.isDesativado());
+            usuarioInDB.setEmail(usuario.getEmail());
+            usuarioInDB.setUltimo_login(usuario.getUltimo_login());
+
+            this.usuarioJPA.save(usuarioInDB);
+        }
+    }
+
+    public void deleteById(Long id) {
+        this.usuarioJPA.deleteById(id);
     }
 }

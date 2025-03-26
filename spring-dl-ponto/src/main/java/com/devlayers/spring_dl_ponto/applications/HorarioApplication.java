@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Horario;
 import com.devlayers.spring_dl_ponto.repositories.HorarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
