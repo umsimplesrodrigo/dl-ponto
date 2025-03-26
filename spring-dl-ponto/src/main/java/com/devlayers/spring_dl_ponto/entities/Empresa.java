@@ -64,6 +64,24 @@ public class Empresa {
     public Empresa() {
     }
 
+    public Empresa(String nome, String inscricao, String cnpj, String endereco, String bairro, String cidade, String cep, String estado, String cartaoResponsavel, String cartaoCargo, String responsavelEmail, boolean usaCpf, String nFolha, String telefone, List<Feriado> feriados) {
+        this.nome = nome;
+        this.inscricao = inscricao;
+        this.cnpj = cnpj;
+        this.endereco = endereco;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.cep = cep;
+        this.estado = estado;
+        this.cartaoResponsavel = cartaoResponsavel;
+        this.cartaoCargo = cartaoCargo;
+        this.responsavelEmail = responsavelEmail;
+        this.usaCpf = usaCpf;
+        this.nFolha = nFolha;
+        this.telefone = telefone;
+        this.feriados = feriados;
+    }
+
     public Empresa(Long id, String nome, String inscricao, String cnpj, String endereco, String bairro, String cidade, String cep, String estado, String cartaoResponsavel, String cartaoCargo, String responsavelEmail, boolean usaCpf, String nFolha, String telefone, List<Feriado> feriados) {
         this.id = id;
         this.nome = nome;
