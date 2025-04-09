@@ -13,7 +13,7 @@ public class AbonoParcial {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_funcionario", referencedColumnName = "id")
+    @JoinColumn(name = "id_funcionario", referencedColumnName = "id", insertable = false, updatable = false)
     private Funcionario funcionario;
 
     @Column(name = "data")
@@ -26,7 +26,7 @@ public class AbonoParcial {
     private String horaFim;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_justificativa", referencedColumnName = "id")
+    @JoinColumn(name = "id_justificativa", referencedColumnName = "id", insertable = false, updatable = false)
     private Justificativa justificativa;
 
     @Column(name = "tipo")
@@ -35,22 +35,18 @@ public class AbonoParcial {
     public AbonoParcial() {
     }
 
-    public AbonoParcial(Funcionario funcionario, LocalDate data, String horaInicio, String horaFim, Justificativa justificativa, boolean tipo) {
-        this.funcionario = funcionario;
+    public AbonoParcial(LocalDate data, String horaInicio, String horaFim, boolean tipo) {
         this.data = data;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
-        this.justificativa = justificativa;
         this.tipo = tipo;
     }
 
-    public AbonoParcial(Long id, Funcionario funcionario, LocalDate data, String horaInicio, String horaFim, Justificativa justificativa, boolean tipo) {
+    public AbonoParcial(Long id, LocalDate data, String horaInicio, String horaFim, boolean tipo) {
         this.id = id;
-        this.funcionario = funcionario;
         this.data = data;
         this.horaInicio = horaInicio;
         this.horaFim = horaFim;
-        this.justificativa = justificativa;
         this.tipo = tipo;
     }
 
@@ -60,14 +56,6 @@ public class AbonoParcial {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
-
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
     }
 
     public LocalDate getData() {
@@ -92,14 +80,6 @@ public class AbonoParcial {
 
     public void setHora_fim(String hora_fim) {
         this.horaFim = hora_fim;
-    }
-
-    public Justificativa getJustificativa() {
-        return justificativa;
-    }
-
-    public void setJustificativa(Justificativa justificativa) {
-        this.justificativa = justificativa;
     }
 
     public boolean isTipo() {

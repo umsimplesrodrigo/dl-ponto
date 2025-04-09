@@ -22,19 +22,19 @@ public class Funcionario {
     private String nIdentificador;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_empresa", referencedColumnName = "id")
+    @JoinColumn(name = "id_empresa", referencedColumnName = "id", insertable = false, updatable = false)
     private Empresa empresa;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_horario", referencedColumnName = "id")
+    @JoinColumn(name = "id_horario", referencedColumnName = "id", insertable = false, updatable = false)
     private Horario horario;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_funcao", referencedColumnName = "id")
+    @JoinColumn(name = "id_funcao", referencedColumnName = "id", insertable = false, updatable = false)
     private Funcao funcao;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_departamento", referencedColumnName = "id")
+    @JoinColumn(name = "id_departamento", referencedColumnName = "id", insertable = false, updatable = false)
     private Departamento departamento;
 
     @Column(name = "admissao")
@@ -74,10 +74,6 @@ public class Funcionario {
         this.nFolha = nFolha;
         this.nome = nome;
         this.nIdentificador = nIdentificador;
-        this.empresa = empresa;
-        this.horario = horario;
-        this.funcao = funcao;
-        this.departamento = departamento;
         this.admissao = admissao;
         this.demissao = demissao;
         this.afastDataInicio = afastDataInicio;
@@ -137,38 +133,6 @@ public class Funcionario {
         this.nIdentificador = n_identificador;
     }
 
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
-    public Horario getHorario() {
-        return horario;
-    }
-
-    public void setHorario(Horario horario) {
-        this.horario = horario;
-    }
-
-    public Funcao getFuncao() {
-        return funcao;
-    }
-
-    public void setFuncao(Funcao funcao) {
-        this.funcao = funcao;
-    }
-
-    public Departamento getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(Departamento departamento) {
-        this.departamento = departamento;
-    }
-
     public LocalDate getAdmissao() {
         return admissao;
     }
@@ -223,30 +187,6 @@ public class Funcionario {
 
     public void setPis(String pis) {
         this.pis = pis;
-    }
-
-    public List<Batida> getBatidas() {
-        return batidas;
-    }
-
-    public void setBatidas(List<Batida> batidas) {
-        this.batidas = batidas;
-    }
-
-    public List<Afastamento> getAfastamentos() {
-        return afastamentos;
-    }
-
-    public void setAfastamentos(List<Afastamento> afastamentos) {
-        this.afastamentos = afastamentos;
-    }
-
-    public List<AbonoParcial> getAbonosParciais() {
-        return abonosParciais;
-    }
-
-    public void setAbonosParciais(List<AbonoParcial> abonosParciais) {
-        this.abonosParciais = abonosParciais;
     }
 
     @Override

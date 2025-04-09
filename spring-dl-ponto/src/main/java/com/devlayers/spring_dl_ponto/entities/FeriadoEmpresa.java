@@ -11,11 +11,11 @@ public class FeriadoEmpresa {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_empresa", referencedColumnName = "id")
+    @JoinColumn(name = "id_empresa", referencedColumnName = "id", insertable = false, updatable = false)
     private Empresa empresa;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_feriado", referencedColumnName = "id")
+    @JoinColumn(name = "id_feriado", referencedColumnName = "id", insertable = false, updatable = false)
     private Feriado feriado;
 
     public FeriadoEmpresa() {
@@ -27,21 +27,5 @@ public class FeriadoEmpresa {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
-    public Feriado getFeriado() {
-        return feriado;
-    }
-
-    public void setFeriado(Feriado feriado) {
-        this.feriado = feriado;
     }
 }

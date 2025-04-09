@@ -13,7 +13,7 @@ public class Afastamento {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_funcionario", referencedColumnName = "id")
+    @JoinColumn(name = "id_funcionario", referencedColumnName = "id", insertable = false, updatable = false)
     private Funcionario funcionario;
 
     @Column(name = "data_inicio", nullable = false)
@@ -23,7 +23,7 @@ public class Afastamento {
     private LocalDate dataFim;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_justificativa", referencedColumnName = "id")
+    @JoinColumn(name = "id_justificativa", referencedColumnName = "id", insertable = false, updatable = false)
     private Justificativa justificativa;
 
     @Column(name = "observacao", length = 255)
@@ -31,11 +31,16 @@ public class Afastamento {
 
     public Afastamento() {}
 
-    public Afastamento(Funcionario funcionario, LocalDate dataInicio, LocalDate dataFim, Justificativa justificativa, String obs) {
-        this.funcionario = funcionario;
+    public Afastamento(Long id, LocalDate dataInicio, LocalDate dataFim, String obs) {
+        this.id = id;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
-        this.justificativa = justificativa;
+        this.obs = obs;
+    }
+
+    public Afastamento(LocalDate dataInicio, LocalDate dataFim, String obs) {
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
         this.obs = obs;
     }
 
@@ -45,14 +50,6 @@ public class Afastamento {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
-
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
     }
 
     public LocalDate getDataInicio() {
@@ -69,14 +66,6 @@ public class Afastamento {
 
     public void setDataFim(LocalDate dataFim) {
         this.dataFim = dataFim;
-    }
-
-    public Justificativa getJustificativa() {
-        return justificativa;
-    }
-
-    public void setJustificativa(Justificativa justificativa) {
-        this.justificativa = justificativa;
     }
 
     public String getObs() {
