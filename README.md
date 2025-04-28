@@ -1,30 +1,41 @@
 <img src="imagens_readme/logo_devlayers.png" width="400">
 
-# DevLayers - Projeto DL Ponto
-## Business Model Canvas
+# 🖥️ DevLayers - Projeto DL Ponto
+## 📑 Sumário <!-- omit in toc -->
+
+- [📊 Business Model Canvas](#-business-model-canvas)
+- [📜 Histórico de Revisão](#-histórico-de-revisão)
+- [🎯 Objetivo](#-objetivo)
+- [🎯 Escopo](#-escopo)
+- [📖 Visão Geral](#-visão-geral)
+- [✅ Requisitos Funcionais](#-requisitos-funcionais)
+- [📌 Requisitos Não Funcionais](#-requisitos-não-funcionais)
+- [📌 Tecnologias Utilizadas](#-tecnologias-utilizadas)
+## 📊 Business Model Canvas
 |Principais Parceiros|Principais Atividades|Proposta de Valor|Relacionamento|Canais|Segmentos de clientes|Estrutura de custos|Fontes de renda|
 |--------------------|---------------------|-----------------|--------------|------|---------------------|-------------------|---------------|
 |Empresas que precisam de um sistema de controle de ponto|Desenvolvimento e manutenção do software|Facilitar o controle de jornada dos funcionários|Suporte via e-mail/chat/WhatsApp|Site oficial para apresentação e aquisição do sistema|Pequenas e médias empresas que precisam de um controle de ponto eficiente|Desenvolvimento e manutenção do sistema|Venda de licenças do software|
 Desenvolvedores|Suporte técnico para empresas/clientes|Interface intuitiva e fácil de usar|Atualizações e melhorias contínuas|null|Empresas com funcionários remotos ou em diferentes turnos|Infraestrutura (hospedagem, servidores, banco de dados)|Consultoria para empresas que precisem de treinamentos|
 |null|Implementação de novas funcionalidades conforme necessidades do mercado|Relatórios automatizados para análise e conformidade|Comunidade ou fórum para feedback e sugestões|null|null|Suporte e atendimento ao cliente|null|
 |null|Treinamento para empresas/clientes|Possibilidade de expansão para novos recursos no futuro|null|null|null|Marketing e divulgação|null|
-## Histórico de Revisão
+## 📜 Histórico de Revisão
 | Data   | Versão | Descrição | Autor |
 |--------|--------|-----------|-------|
 | 15/02/2025 | 1.0 | Elaboração da primeira versão do documento | Rodrigo Oliveira |
 | 16/02/2025 | 1.1 | Inclusão de novas entidades e atributos e detalhamento nas funcionalidades | Rodrigo Oliveira |
 | 24/02/2025 | 1.2 | Formatando o arquivo corretamente e ajustando as entidades | Rodrigo Oliveira |
-## Versão 1.2
-### Objetivo
+| 25/03/2025 | 1.3 | Personalizando documentação e inserindo tecnologias utilizadas | Rodrigo Oliveira |
+## Versão 1.3
+### 🎯 Objetivo
 Este documento apresenta os requisitos funcionais do sistema de controle de jornada a ser desenvolvido, seguindo boas práticas de arquitetura e design de software. O desenvolvimento será acompanhado pelo professor da disciplina, Jefté Goes, garantindo a aderência às diretrizes estabelecidas.
-### Escopo
+### 🎯 Escopo
 O sistema terá uma estrutura simples, com um número reduzido de entidades e funcionalidades focadas no controle de jornada. Algumas limitações serão aplicadas, como a ausência de escalas mensais ou ciclos de trabalho complexos. Entre as principais funcionalidades previstas estão:
  - Cadastro e gerenciamento de horários de trabalho;
  - Controle de banco de horas;
  - Geração de relatórios personalizados;
-### Visão Geral
+### 📖 Visão Geral
 O sistema de ponto tem como objetivo gerenciar o controle de jornada de trabalho de funcionários de diferentes empresas, com a possibilidade de registrar entradas e saídas de forma eficiente, gerar relatórios de cálculos de horas, permitir justificativas e fornecer funcionalidades de administração e edição de registros de ponto.
-## Requisitos Funcionais
+## ✅ Requisitos Funcionais
 ### RF001 – Cadastro de Empresas
  - O sistema deve permitir o cadastro e edição de uma ou mais empresas
  - **Entrada:** Nome, inscrição estadual, CNPJ/CPF, campos de endereço, nome, cargo e e-mail do responsável pela assinatura de relatórios.
@@ -95,15 +106,28 @@ O sistema de ponto tem como objetivo gerenciar o controle de jornada de trabalho
  - Entrada: Batidas.
  - Processamento: Validação do intervalo mínimo de 5 minutos entre uma batida e outra.
  - Saída: Registros sincronizados.
-## Requisitos Não Funcionais
- - O sistema será uma aplicação desktop, com o aplicativo mobile disponível apenas para os funcionários registrarem o ponto. 
- - O sistema deve ser seguro, garantindo que apenas administradores possam realizar alterações nos registros de ponto. 
- - O sistema deve permitir a gestão de múltiplas empresas de forma independente. 
- - A interface do usuário deve ser intuitiva e de fácil navegação. 
- - O sistema deve permitir a exportação de relatórios em formatos como PDF ou Excel.
-
+## 📌 Requisitos Não Funcionais
+### RNF001 – Aplicação Desktop e Mobile
+- O sistema será uma aplicação desktop, com um aplicativo mobile disponível apenas para os funcionários registrarem o ponto.
+### RNF002 – Segurança dos Registros de Ponto
+- O sistema deve ser seguro, garantindo que apenas administradores possam realizar alterações nos registros de ponto.
+### RNF003 – Gestão de Múltiplas Empresas
+- O sistema deve permitir a gestão de múltiplas empresas de forma independente.
+### RNF004 – Interface Intuitiva
+- A interface do usuário deve ser intuitiva e de fácil navegação.
+### RNF005 – Exportação de Relatórios
+- O sistema deve permitir a exportação de relatórios em formatos como PDF ou Excel.
+## 📌 Tecnologias Utilizadas
+Este projeto utiliza as seguintes tecnologias e ferramentas:
+- **Java** – Linguagem de programação principal
+- **Maven** – Gerenciador de dependências
+- **MySQL** – Banco de dados relacional
+- **Spring Boot** – Framework para desenvolvimento backend, incluindo:
+  - **Spring JPA** – Persistência de dados
+  - **Spring REST API** – Criação de endpoints para comunicação
+  - **Spring Boot Starter MySQL** – Integração com banco de dados
+- **Postman** – Testes e validação da API
 ## Equipe
-
 <ul>
 <li><img src="imagens_readme/macaco-cirugiao-umsimples.png" width="30px"><a href="https://github.com/umsimplesrodrigo">Rodrigo Oliveira</a></li>
 <li><img src="imagens_readme/quadrado.png" width="30px"><a href="https://github.com/Lys-31">Laís Santana</a></li>
