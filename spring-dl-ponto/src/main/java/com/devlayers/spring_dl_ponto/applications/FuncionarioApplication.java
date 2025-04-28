@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Funcionario;
 import com.devlayers.spring_dl_ponto.repositories.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -16,23 +15,23 @@ public class FuncionarioApplication {
         this.funcionarioRepository = funcionarioRepository;
     }
 
-    public void cadastrarFuncionario(Funcionario funcionario) {
-        this.funcionarioRepository.cadastrarFuncionario(funcionario);
+    public void save(Funcionario funcionario) {
+        this.funcionarioRepository.save(funcionario);
     }
 
-    public void atualizarFuncionario(Long id, Funcionario funcionario) {
-        this.funcionarioRepository.editarFuncionario(id, funcionario);
+    public List<Funcionario> findAll() {
+        return funcionarioRepository.findAll();
     }
 
-    public void apagarFuncionario(Long id) {
-        this.funcionarioRepository.apagarFuncionario(id);
+    public Funcionario findById(Long id) {
+        return funcionarioRepository.findById(id);
     }
 
-    public List<Funcionario> buscarFuncionarios() {
-        return funcionarioRepository.buscarFuncionarios();
+    public void updateFuncionario(Long id, Funcionario funcionario) {
+        this.funcionarioRepository.updateFuncionario(id, funcionario);
     }
 
-    public Funcionario buscarFuncionarioPorID(Long id) {
-        return funcionarioRepository.buscarFuncionarioPorID(id);
+    public void deleteById(Long id) {
+        this.funcionarioRepository.deleteById(id);
     }
 }

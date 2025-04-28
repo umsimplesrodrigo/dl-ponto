@@ -1,8 +1,8 @@
 package com.devlayers.spring_dl_ponto.entities;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "funcionarios")
@@ -21,20 +21,20 @@ public class Funcionario {
     @Column(name = "n_identificador")
     private String nIdentificador;
 
-    @ManyToOne
-    @JoinColumn(name = "id_empresa")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_empresa", referencedColumnName = "id", insertable = false, updatable = false)
     private Empresa empresa;
 
-    @ManyToOne
-    @JoinColumn(name = "id_horario")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_horario", referencedColumnName = "id", insertable = false, updatable = false)
     private Horario horario;
 
-    @ManyToOne
-    @JoinColumn(name = "id_funcao")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_funcao", referencedColumnName = "id", insertable = false, updatable = false)
     private Funcao funcao;
 
-    @ManyToOne
-    @JoinColumn(name = "id_departamento")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_departamento", referencedColumnName = "id", insertable = false, updatable = false)
     private Departamento departamento;
 
     @Column(name = "admissao")
@@ -58,7 +58,29 @@ public class Funcionario {
     @Column(name = "pis")
     private String pis;
 
+    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL)
+    private List<Batida> batidas;
+
+    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL)
+    private List<Afastamento> afastamentos;
+
+    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL)
+    private List<AbonoParcial> abonosParciais;
+
     public Funcionario() {
+    }
+
+    public Funcionario(String nFolha, String nome, String nIdentificador, Empresa empresa, Horario horario, Funcao funcao, Departamento departamento, LocalDate admissao, LocalDate demissao, LocalDate afastDataInicio, LocalDate afastDataFim, boolean invisivel, String cpf, String pis) {
+        this.nFolha = nFolha;
+        this.nome = nome;
+        this.nIdentificador = nIdentificador;
+        this.admissao = admissao;
+        this.demissao = demissao;
+        this.afastDataInicio = afastDataInicio;
+        this.afastDataFim = afastDataFim;
+        this.invisivel = invisivel;
+        this.cpf = cpf;
+        this.pis = pis;
     }
 
     public Funcionario(Long id, String nFolha, String nome, String nIdentificador, Empresa empresa, Horario horario, Funcao funcao, Departamento departamento, LocalDate admissao, LocalDate demissao, LocalDate afastDataInicio, LocalDate afastDataFim, boolean invisivel, String cpf, String pis) {
@@ -109,38 +131,6 @@ public class Funcionario {
 
     public void setN_identificador(String n_identificador) {
         this.nIdentificador = n_identificador;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
-    public Horario getHorario() {
-        return horario;
-    }
-
-    public void setHorario(Horario horario) {
-        this.horario = horario;
-    }
-
-    public Funcao getFuncao() {
-        return funcao;
-    }
-
-    public void setFuncao(Funcao funcao) {
-        this.funcao = funcao;
-    }
-
-    public Departamento getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(Departamento departamento) {
-        this.departamento = departamento;
     }
 
     public LocalDate getAdmissao() {
@@ -197,5 +187,29 @@ public class Funcionario {
 
     public void setPis(String pis) {
         this.pis = pis;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "id=" + id +
+                ", nFolha='" + nFolha + '\'' +
+                ", nome='" + nome + '\'' +
+                ", nIdentificador='" + nIdentificador + '\'' +
+                ", empresa=" + empresa +
+                ", horario=" + horario +
+                ", funcao=" + funcao +
+                ", departamento=" + departamento +
+                ", admissao=" + admissao +
+                ", demissao=" + demissao +
+                ", afastDataInicio=" + afastDataInicio +
+                ", afastDataFim=" + afastDataFim +
+                ", invisivel=" + invisivel +
+                ", cpf='" + cpf + '\'' +
+                ", pis='" + pis + '\'' +
+                ", batidas=" + batidas +
+                ", afastamentos=" + afastamentos +
+                ", abonosParciais=" + abonosParciais +
+                '}';
     }
 }

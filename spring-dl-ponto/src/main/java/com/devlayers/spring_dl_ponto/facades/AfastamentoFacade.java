@@ -15,23 +15,23 @@ public class AfastamentoFacade {
         this.afastamentoApplication = afastamentoApplication;
     }
 
-    public void cadastrarAfastamento(Afastamento afastamento) {
-        this.afastamentoApplication.cadastrarAfastamento(afastamento);
+    public void save(Afastamento afastamento) {
+        this.afastamentoApplication.save(afastamento);
     }
 
-    public Afastamento buscarAfastamentoPorID(Long id) {
-        return this.afastamentoApplication.buscarAfastamentoPorID(id);
+    public Afastamento findById(Long id) {
+        return this.afastamentoApplication.findById(id);
     }
 
-    public List<Afastamento> buscarAfastamentos() {
-        return this.afastamentoApplication.buscarAfastamentos();
+    public List<Afastamento> findAll() {
+        return this.afastamentoApplication.findAll();
     }
 
-    public void atualizarAfastamento(Long id, Afastamento afastamento) {
-        this.afastamentoApplication.atualizarAfastamento(id, afastamento);
+    public void update(Long id, Afastamento afastamento) {
+        this.afastamentoApplication.update(id, afastamento);
     }
 
-    public void apagarAfastamento(Long id) {
-        this.afastamentoApplication.apagarAfastamento(id);
+    public void deleteById(Long id) {
+        this.afastamentoApplication.deleteById(id);
     }
 }

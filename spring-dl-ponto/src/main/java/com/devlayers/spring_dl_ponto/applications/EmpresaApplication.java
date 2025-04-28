@@ -3,7 +3,6 @@ package com.devlayers.spring_dl_ponto.applications;
 import com.devlayers.spring_dl_ponto.entities.Empresa;
 import com.devlayers.spring_dl_ponto.repositories.EmpresaReporitory;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component

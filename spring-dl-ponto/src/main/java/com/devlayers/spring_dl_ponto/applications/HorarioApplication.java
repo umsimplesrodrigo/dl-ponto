@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Horario;
 import com.devlayers.spring_dl_ponto.repositories.HorarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -16,23 +15,23 @@ public class HorarioApplication {
         this.horarioRepository = horarioRepository;
     }
 
-    public void cadastrarHorario(Horario horario) {
-        horarioRepository.cadastrarHorario(horario);
+    public void save(Horario horario) {
+        horarioRepository.save(horario);
     }
 
-    public Horario buscarHorarioPorID(Long id) {
-        return this.horarioRepository.buscarHorarioPorID(id);
+    public Horario findById(Long id) {
+        return this.horarioRepository.findById(id);
     }
 
-    public List<Horario> buscarHorarios() {
-        return this.horarioRepository.buscarHorarios();
+    public List<Horario> findAll() {
+        return this.horarioRepository.findAll();
     }
 
-    public void atualizarHorario(Long id, Horario horario) {
-        this.horarioRepository.editarHorario(id, horario);
+    public void updateHorario(Long id, Horario horario) {
+        this.horarioRepository.updateHorario(id, horario);
     }
 
-    public void apagarHorario(Long id) {
-        this.horarioRepository.apagarHorario(id);
+    public void deleteById(Long id) {
+        this.horarioRepository.deleteById(id);
     }
 }

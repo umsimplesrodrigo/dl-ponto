@@ -12,8 +12,8 @@ public class Afastamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_funcionario", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_funcionario", referencedColumnName = "id", insertable = false, updatable = false)
     private Funcionario funcionario;
 
     @Column(name = "data_inicio", nullable = false)
@@ -22,8 +22,8 @@ public class Afastamento {
     @Column(name = "data_fim")
     private LocalDate dataFim;
 
-    @ManyToOne
-    @JoinColumn(name = "id_justificativa", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_justificativa", referencedColumnName = "id", insertable = false, updatable = false)
     private Justificativa justificativa;
 
     @Column(name = "observacao", length = 255)
@@ -31,11 +31,16 @@ public class Afastamento {
 
     public Afastamento() {}
 
-    public Afastamento(Funcionario funcionario, LocalDate dataInicio, LocalDate dataFim, Justificativa justificativa, String obs) {
-        this.funcionario = funcionario;
+    public Afastamento(Long id, LocalDate dataInicio, LocalDate dataFim, String obs) {
+        this.id = id;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
-        this.justificativa = justificativa;
+        this.obs = obs;
+    }
+
+    public Afastamento(LocalDate dataInicio, LocalDate dataFim, String obs) {
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
         this.obs = obs;
     }
 
@@ -45,14 +50,6 @@ public class Afastamento {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
-
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
     }
 
     public LocalDate getDataInicio() {
@@ -71,19 +68,23 @@ public class Afastamento {
         this.dataFim = dataFim;
     }
 
-    public Justificativa getJustificativa() {
-        return justificativa;
-    }
-
-    public void setJustificativa(Justificativa justificativa) {
-        this.justificativa = justificativa;
-    }
-
     public String getObs() {
         return obs;
     }
 
     public void setObs(String obs) {
         this.obs = obs;
+    }
+
+    @Override
+    public String toString() {
+        return "Afastamento{" +
+                "id=" + id +
+                ", funcionario=" + funcionario +
+                ", dataInicio=" + dataInicio +
+                ", dataFim=" + dataFim +
+                ", justificativa=" + justificativa +
+                ", obs='" + obs + '\'' +
+                '}';
     }
 }

@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.applications.DepartamentoApplication;
 import com.devlayers.spring_dl_ponto.entities.Departamento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -16,27 +15,23 @@ public class DepartamentoFacade {
         this.departamentoApplication = departamentoApplication;
     }
 
-    public void cadastrarDepartamento(Departamento departamento) {
-        this.departamentoApplication.cadastrarDepartamento(departamento);
+    public void save(Departamento departamento) {
+        this.departamentoApplication.save(departamento);
     }
 
-    public void atualizarDepartamento(Long id, Departamento departamento) {
-        this.departamentoApplication.atualizarDepartamento(id, departamento);
+    public List<Departamento> findAll() {
+        return this.departamentoApplication.findAll();
     }
 
-    public void apagarDepartamento(Long id) {
-        this.departamentoApplication.apagarDepartamento(id);
+    public Departamento findById(Long id) {
+        return this.departamentoApplication.findById(id);
     }
 
-    public List<Departamento> buscarDepartamentos() {
-        return this.departamentoApplication.buscarDepartamentos();
+    public void update(Long id, Departamento departamento) {
+        this.departamentoApplication.update(id, departamento);
     }
 
-    public Departamento buscarDepartamentoPorID(Long id) {
-        return this.departamentoApplication.buscarDepartamentoPorID(id);
+    public void deleteById(Long id) {
+        this.departamentoApplication.deleteById(id);
     }
-
-    /*public boolean isEmpty() {
-        return this.usuarioDepartamento.isEmpty();
-    }*/
 }

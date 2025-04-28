@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Justificativa;
 import com.devlayers.spring_dl_ponto.facades.JustificativaFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

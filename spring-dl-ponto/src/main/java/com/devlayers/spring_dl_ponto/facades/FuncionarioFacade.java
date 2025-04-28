@@ -3,7 +3,6 @@ package com.devlayers.spring_dl_ponto.facades;
 import com.devlayers.spring_dl_ponto.applications.FuncionarioApplication;
 import com.devlayers.spring_dl_ponto.entities.Funcionario;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -14,23 +13,23 @@ public class FuncionarioFacade {
         this.funcionarioApplication = funcionarioApplication;
     }
 
-    public void cadastrarFuncionario(Funcionario funcionario) {
-        this.funcionarioApplication.cadastrarFuncionario(funcionario);
+    public void save(Funcionario funcionario) {
+        this.funcionarioApplication.save(funcionario);
     }
 
-    public void atualizarFuncionario(Long id, Funcionario funcionario) {
-        this.funcionarioApplication.atualizarFuncionario(id, funcionario);
+    public Funcionario findById(Long id) {
+        return funcionarioApplication.findById(id);
     }
 
-    public void apagarFuncionario(Long id) {
-        this.funcionarioApplication.apagarFuncionario(id);
+    public List<Funcionario> findAll() {
+        return funcionarioApplication.findAll();
     }
 
-    public Funcionario buscarFuncionarioPorID(Long id) {
-        return funcionarioApplication.buscarFuncionarioPorID(id);
+    public void updateFuncionario(Long id, Funcionario funcionario) {
+        this.funcionarioApplication.updateFuncionario(id, funcionario);
     }
 
-    public List<Funcionario> buscarFuncionarios() {
-        return funcionarioApplication.buscarFuncionarios();
+    public void deleteById(Long id) {
+        this.funcionarioApplication.deleteById(id);
     }
 }

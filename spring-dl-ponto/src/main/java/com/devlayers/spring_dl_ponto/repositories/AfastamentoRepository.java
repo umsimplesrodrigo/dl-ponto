@@ -1,42 +1,45 @@
 package com.devlayers.spring_dl_ponto.repositories;
 
 import com.devlayers.spring_dl_ponto.entities.Afastamento;
+import com.devlayers.spring_dl_ponto.repositories.jpa.AfastamentoJPA;
 import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class AfastamentoRepository {
-    private List<Afastamento> afastamentos = new ArrayList<>();
+    private final AfastamentoJPA afastamentoJPA;
 
-    public void cadastrarAfastamento(Afastamento afastamento) {
-        this.afastamentos.add(afastamento);
+    public AfastamentoRepository(AfastamentoJPA afastamentoJPA) {
+        this.afastamentoJPA = afastamentoJPA;
     }
 
-    public Afastamento buscarAfastamentoPorID(Long id) {
-        return this.afastamentos
-                .stream()
-                .filter(a -> a.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+    public void save(Afastamento afastamento) {
+        this.afastamentoJPA.save(afastamento);
     }
 
-    public List<Afastamento> buscarAfastamentos() {
-        return this.afastamentos;
+    public Afastamento findById(Long id) {
+        return this.afastamentoJPA.findById(id).orElse(null);
     }
 
-    public void atualizarAfastamento(Long id, Afastamento afastamento) {
-        Afastamento afastamentoInMemory = this.buscarAfastamentoPorID(id);
-
-        afastamentoInMemory.setFuncionario(afastamento.getFuncionario());
-        afastamentoInMemory.setDataInicio(afastamento.getDataInicio());
-        afastamentoInMemory.setDataFim(afastamento.getDataFim());
-        afastamentoInMemory.setJustificativa(afastamento.getJustificativa());
-        afastamentoInMemory.setObs(afastamento.getObs());
+    public List<Afastamento> findAll() {
+        return this.afastamentoJPA.findAll();
     }
 
-    public void apagarAfastamento(Long id) {
-        this.afastamentos.removeIf(a -> a.getId().equals(id));
+    public void update(Long id, Afastamento afastamento) {
+        Afastamento afastamentoInDb = this.afastamentoJPA.findById(id).orElse(null);
+
+        if (afastamentoInDb != null) {
+            afastamentoInDb.setFuncionario(afastamento.getFuncionario());
+            afastamentoInDb.setDataInicio(afastamento.getDataInicio());
+            afastamentoInDb.setDataFim(afastamento.getDataFim());
+            afastamentoInDb.setJustificativa(afastamento.getJustificativa());
+            afastamentoInDb.setObs(afastamento.getObs());
+
+            this.afastamentoJPA.save(afastamentoInDb);
+        }
+    }
+
+    public void deleteById(Long id) {
+        this.afastamentoJPA.deleteById(id);
     }
 }

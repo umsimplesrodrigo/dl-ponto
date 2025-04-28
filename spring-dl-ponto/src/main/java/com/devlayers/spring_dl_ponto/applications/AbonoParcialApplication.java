@@ -3,7 +3,6 @@ package com.devlayers.spring_dl_ponto.applications;
 import com.devlayers.spring_dl_ponto.entities.AbonoParcial;
 import com.devlayers.spring_dl_ponto.repositories.AbonoParcialRepository;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -14,28 +13,25 @@ public class AbonoParcialApplication {
         this.abonosParciaisRepository = abonosParciaisRepository;
     }
 
-    public void cadastrarAbonoParcial(AbonoParcial abonoParcial) {
-        abonosParciaisRepository.addAbonoParcial(abonoParcial);
+    public void save(AbonoParcial abonoParcial) {
+        abonosParciaisRepository.save(abonoParcial);
     }
 
-    public void atualizar(int id, AbonoParcial abonoParcial) {
+    public void update(Long id, AbonoParcial abonoParcial) {
         abonosParciaisRepository.upadateAbonoParcial(id, abonoParcial);
     }
 
-    public void deletar(int id) {
-        AbonoParcial abonoParcial = abonosParciaisRepository.buscarPorId(id);
-        abonosParciaisRepository.deletarAbonoParcial(id);
+    public void deleteById(Long id) {
+        AbonoParcial abonoParcial = abonosParciaisRepository.findById(id);
+        abonosParciaisRepository.deleteById(id);
     }
 
-    public List<AbonoParcial> search() {
-        return this.abonosParciaisRepository.buscarAbonosParciais();
+    public List<AbonoParcial> findAll() {
+        return this.abonosParciaisRepository.findAll();
     }
 
-    public AbonoParcial buscarPorId(int id) {
-        return this.abonosParciaisRepository.buscarPorId(id);
+    public AbonoParcial findById(Long id) {
+        return this.abonosParciaisRepository.findById(id);
     }
 
-    public boolean estaVazio() {
-        return this.abonosParciaisRepository.estaVazio();
-    }
 }

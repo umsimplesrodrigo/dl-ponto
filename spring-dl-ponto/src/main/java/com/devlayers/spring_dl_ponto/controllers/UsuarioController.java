@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Usuario;
 import com.devlayers.spring_dl_ponto.facades.UsuarioFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -18,27 +17,27 @@ public class UsuarioController {
     }
 
     @PostMapping("")
-    public void cadastrarUsuario(@RequestBody Usuario usuario) {
-        this.usuarioFacade.cadastrarUsuario(usuario);
+    public void save(@RequestBody Usuario usuario) {
+        this.usuarioFacade.save(usuario);
     }
 
     @GetMapping("/{id}")
-    public Usuario buscarUsuarioPorID(@PathVariable Long id) {
-        return this.usuarioFacade.buscarUsuariosPorID(id);
+    public Usuario findById(@PathVariable Long id) {
+        return this.usuarioFacade.findById(id);
     }
 
     @GetMapping("")
-    public List<Usuario> buscarUsuarios() {
-        return this.usuarioFacade.buscarUsuarios();
+    public List<Usuario> findAll() {
+        return this.usuarioFacade.findAll();
     }
 
     @PutMapping("/{id}")
-    public void atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
-        this.usuarioFacade.atualizarUsuario(id, usuario);
+    public void update(@PathVariable Long id, @RequestBody Usuario usuario) {
+        this.usuarioFacade.update(id, usuario);
     }
 
     @DeleteMapping("/{id}")
-    public void apagarUsuario(@PathVariable Long id) {
-        this.usuarioFacade.apagarUsuario(id);
+    public void deleteById(@PathVariable Long id) {
+        this.usuarioFacade.deleteById(id);
     }
 }

@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Afastamento;
 import com.devlayers.spring_dl_ponto.facades.AfastamentoFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -18,27 +17,27 @@ public class AfastamentoController {
     }
 
     @PostMapping("")
-    public void cadastrarAfastamento(@RequestBody Afastamento afastamento) {
-        this.afastamentoFacade.cadastrarAfastamento(afastamento);
+    public void save(@RequestBody Afastamento afastamento) {
+        this.afastamentoFacade.save(afastamento);
     }
 
     @GetMapping("/{id}")
-    public Afastamento buscarAfastamentoPorID(@PathVariable Long id) {
-        return this.afastamentoFacade.buscarAfastamentoPorID(id);
+    public Afastamento findById(@PathVariable Long id) {
+        return this.afastamentoFacade.findById(id);
     }
 
     @GetMapping("")
-    public List<Afastamento> buscarAfastamentos() {
-        return this.afastamentoFacade.buscarAfastamentos();
+    public List<Afastamento> findAll() {
+        return this.afastamentoFacade.findAll();
     }
 
     @PutMapping("/{id}")
-    public void atualizarAfastamento(@PathVariable Long id, @RequestBody Afastamento afastamento) {
-        this.afastamentoFacade.atualizarAfastamento(id, afastamento);
+    public void update(@PathVariable Long id, @RequestBody Afastamento afastamento) {
+        this.afastamentoFacade.update(id, afastamento);
     }
 
     @DeleteMapping("{id}")
-    public void apagarAfastamento(@PathVariable Long id) {
-        this.afastamentoFacade.apagarAfastamento(id);
+    public void deleteById(@PathVariable Long id) {
+        this.afastamentoFacade.deleteById(id);
     }
 }

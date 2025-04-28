@@ -4,7 +4,6 @@ import com.devlayers.spring_dl_ponto.entities.Usuario;
 import com.devlayers.spring_dl_ponto.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -16,27 +15,23 @@ public class UsuarioApplication {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public void cadastrarUsuario(Usuario usuario) {
-        usuarioRepository.cadastrarUsuario(usuario);
+    public void save(Usuario usuario) {
+        usuarioRepository.save(usuario);
     }
 
-    public void atualizarUsuario(Long id, Usuario usuario) {
-        this.usuarioRepository.atualizarUsuario(id, usuario);
+    public List<Usuario> findAll() {
+        return usuarioRepository.findAll();
     }
 
-    public void apagarUsuario(Long id) {
-        usuarioRepository.apagarUsuario(id);
+    public Usuario findById(Long id) {
+        return usuarioRepository.findById(id);
     }
 
-    public List<Usuario> buscarUsuarios() {
-        return usuarioRepository.buscarUsuarios();
+    public void update(Long id, Usuario usuario) {
+        this.usuarioRepository.update(id, usuario);
     }
 
-    public Usuario buscarUsuarioPorID(Long id) {
-        return usuarioRepository.buscarUsuarioPorID(id);
+    public void deleteById(Long id) {
+        usuarioRepository.deleteById(id);
     }
-
-    /*public boolean isEmpty() {
-        return usuarioRepository.isEmpty();
-    }*/
 }
